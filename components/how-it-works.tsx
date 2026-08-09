@@ -12,7 +12,6 @@ const steps = [
     title: "Contacto Inicial",
     description:
       "Nos escribís por WhatsApp para contarnos tu consulta. Respondemos con calidez y sin vueltas.",
-    shape: "shape-shell",
   },
   {
     number: "02",
@@ -20,7 +19,6 @@ const steps = [
     title: "Entrevista de Evaluación",
     description:
       "Conocemos las necesidades de la persona para asignar el grupo o Profe ideal.",
-    shape: "shape-shell-alt",
   },
   {
     number: "03",
@@ -28,7 +26,6 @@ const steps = [
     title: "¡A la Pileta!",
     description:
       "Comenzamos las actividades en la sede que mejor te quede, con acompañamiento cercano.",
-    shape: "shape-shell-soft",
   },
 ];
 
@@ -59,8 +56,7 @@ export function HowItWorks() {
                 transition={{ duration: 0.55, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.03 }}
                 className={cn(
-                  "relative bg-foam p-6 shadow-float ring-1 ring-ocean/5 sm:p-7",
-                  step.shape,
+                  "liquid-drop relative bg-foam p-6 shadow-float ring-1 ring-ocean/5 will-change-transform sm:p-7",
                   index === 1 && "md:mt-8"
                 )}
               >

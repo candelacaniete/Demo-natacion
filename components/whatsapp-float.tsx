@@ -13,12 +13,13 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function WhatsappFloat() {
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex max-w-[calc(100vw-2rem)] flex-col items-end gap-2 md:bottom-7 md:right-7 md:gap-3">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2 md:bottom-7 md:right-7 md:gap-3">
+      {/* Tooltip only from sm up — avoids colliding with content on mobile */}
       <motion.div
         initial={{ opacity: 0, y: 12, scale: 0.92 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 1, duration: 0.45 }}
-        className="animate-bubble-bob relative max-w-[9.5rem] bg-white px-2 py-1 text-left shadow-float ring-1 ring-ocean/10 sm:max-w-[12.8rem] sm:px-3.5 sm:py-2.5"
+        className="relative hidden max-w-[12.8rem] bg-white px-3.5 py-2.5 text-left shadow-float ring-1 ring-ocean/10 sm:block"
         style={{ borderRadius: "22px 22px 8px 22px" }}
       >
         <p className="font-display text-xs font-semibold leading-snug text-sky-950">
@@ -40,13 +41,11 @@ export function WhatsappFloat() {
         transition={{ delay: 0.8, duration: 0.4 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.96 }}
-        className="relative flex h-12 w-12 items-center justify-center bg-whatsapp text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.65)] md:h-14 md:w-14"
-        style={{ borderRadius: "42% 58% 50% 50% / 55% 40% 60% 45%" }}
+        className="liquid-drop relative flex h-12 w-12 items-center justify-center bg-whatsapp text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.65)] will-change-transform md:h-14 md:w-14"
       >
         <span
           aria-hidden="true"
-          className="absolute inset-0 animate-pulse-ring bg-whatsapp"
-          style={{ borderRadius: "42% 58% 50% 50% / 55% 40% 60% 45%" }}
+          className="absolute inset-0 animate-pulse-ring rounded-[inherit] bg-whatsapp"
         />
         <WhatsAppIcon className="relative h-6 w-6 md:h-7 md:w-7" />
       </motion.a>

@@ -68,7 +68,6 @@
   font-family: var(--font-sora), "Outfit", sans-serif;
 }
 
-/* Explicit organic shells — softer on mobile, aggressive from md up */
 @utility shape-shell {
   border-radius: 32px;
 }
@@ -95,16 +94,35 @@
   }
 }
 
+/* Liquid drop morph — gelatinous water feel */
+@utility liquid-drop {
+  border-radius: 30px 15px 30px 15px;
+  transition:
+    border-radius 500ms ease-in-out,
+    transform 500ms ease-in-out,
+    box-shadow 500ms ease-in-out;
+  will-change: transform, border-radius;
+}
+
+@utility liquid-drop-hover {
+  border-radius: 30px 15px 30px 15px;
+  transition:
+    border-radius 500ms ease-in-out,
+    transform 500ms ease-in-out,
+    box-shadow 500ms ease-in-out;
+  will-change: transform, border-radius;
+}
+
+.liquid-drop:hover,
+.liquid-drop:active,
+.liquid-drop-hover:hover,
+.liquid-drop-hover:active,
+.group\/liquid:hover .liquid-drop-hover {
+  border-radius: 15px 30px 15px 30px;
+}
+
 @utility shape-pill-soft {
   border-radius: 28px 14px 28px 14px;
-}
-
-@utility shape-drop {
-  border-radius: 68% 32% 58% 42% / 46% 54% 46% 54%;
-}
-
-@utility shape-pebble {
-  border-radius: 55% 45% 42% 58% / 48% 52% 48% 52%;
 }
 
 @utility shape-note {
@@ -147,16 +165,6 @@
   }
 }
 
-@keyframes float-soft {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
 @keyframes pulse-ring {
   0% {
     transform: scale(1);
@@ -172,23 +180,27 @@
   }
 }
 
-@keyframes bubble-bob {
-  0%,
-  100% {
-    transform: translateY(0);
+@keyframes wave-tide {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translate3d(-4%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes wave-drift {
-  0%,
-  100% {
-    transform: translateX(0);
+@keyframes wave-tide-alt {
+  0% {
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateX(-18px);
+    transform: translate3d(3.5%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -200,8 +212,14 @@
   animation: accordion-up 0.22s ease-out;
 }
 
-@utility animate-float-soft {
-  animation: float-soft 5.8s ease-in-out infinite;
+@keyframes bubble-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @utility animate-pulse-ring {
@@ -210,8 +228,15 @@
 
 @utility animate-bubble-bob {
   animation: bubble-bob 3s ease-in-out infinite;
+  will-change: transform;
 }
 
-@utility animate-wave-drift {
-  animation: wave-drift 10s ease-in-out infinite;
+@utility animate-wave-tide {
+  animation: wave-tide 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-wave-tide-alt {
+  animation: wave-tide-alt 14s ease-in-out infinite;
+  will-change: transform;
 }

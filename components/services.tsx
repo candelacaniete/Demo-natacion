@@ -11,7 +11,6 @@ const services = [
     title: "Natación Adaptada e Inclusiva",
     description:
       "Aprendizaje, desarrollo motor, seguridad en el agua y actividad física para todas las edades, con propuestas pensadas para cada ritmo.",
-    shape: "shape-shell",
     accent: "bg-[linear-gradient(160deg,#dff3ff_0%,#f7fcff_50%,#e8fff9_100%)]",
     iconWrap: "bg-ocean/12 text-ocean",
     className: "md:col-span-2 md:min-h-[17rem]",
@@ -21,7 +20,6 @@ const services = [
     title: "Hidroterapia & Neurodesarrollo",
     description:
       "Terapia especializada en el medio acuático coordinada por profesionales de la salud y educación física.",
-    shape: "shape-shell-alt",
     accent: "bg-[linear-gradient(160deg,#d8fff8_0%,#f7fcff_55%,#e8f7ff_100%)]",
     iconWrap: "bg-teal/20 text-teal-deep",
     className: "md:row-span-2 md:min-h-[22rem]",
@@ -31,7 +29,6 @@ const services = [
     title: "Clases Personalizadas",
     description:
       "Acompañamiento 1 a 1 para perder el miedo al agua, estimulación temprana y rehabilitación.",
-    shape: "shape-shell-soft",
     accent: "bg-[linear-gradient(160deg,#fff3e8_0%,#fff8f1_50%,#eef7ff_100%)]",
     iconWrap: "bg-warm/15 text-warm-deep",
     className: "md:col-span-2",
@@ -69,9 +66,8 @@ export function Services() {
               }}
               whileHover={{ y: -5, scale: 1.03 }}
               className={cn(
-                "group relative flex min-w-0 flex-col overflow-hidden p-6 shadow-float sm:p-8",
+                "group relative flex min-w-0 flex-col overflow-hidden liquid-drop p-6 shadow-float will-change-transform sm:p-8",
                 service.accent,
-                service.shape,
                 service.className
               )}
             >

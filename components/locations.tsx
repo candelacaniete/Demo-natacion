@@ -5,7 +5,6 @@ import { ExternalLink, MapPinned } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { LOCATIONS } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 
 export function Locations() {
   return (
@@ -33,10 +32,7 @@ export function Locations() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.55, delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.03 }}
-              className={cn(
-                "group overflow-hidden border border-white/10 bg-gradient-to-br from-white/12 to-white/5 p-6 shadow-float backdrop-blur-sm sm:p-8",
-                index % 2 === 0 ? "shape-shell" : "shape-shell-alt"
-              )}
+              className="group liquid-drop overflow-hidden border border-white/10 bg-gradient-to-br from-white/12 to-white/5 p-6 shadow-float backdrop-blur-sm will-change-transform sm:p-8"
             >
               <div className="flex items-start gap-4">
                 <span

@@ -15,16 +15,17 @@ export default function Home() {
       <Navbar />
       <main className="w-full max-w-full overflow-x-hidden">
         <Hero />
-        <WaveDivider variant="soft" className="-mt-2" />
+        <WaveDivider variant="soft" animated className="-mt-1" />
         <CudBanner />
-        <WaveDivider variant="deep" to="#082f49" />
+        <WaveDivider variant="deep" to="#082f49" animated />
         <Services />
-        <WaveDivider flip variant="soft" />
+        <WaveDivider flip variant="soft" animated />
         <HowItWorks />
-        <WaveDivider variant="deep" to="#082f49" />
+        <WaveDivider variant="deep" to="#082f49" animated />
         <Locations />
-        <WaveDivider flip variant="soft" to="#F0F8FF" />
+        <WaveDivider flip variant="soft" to="#F0F8FF" animated />
         <Faq />
+        <WaveDivider variant="deep" to="#082f49" animated />
       </main>
       <Footer />
       <WhatsappFloat />
