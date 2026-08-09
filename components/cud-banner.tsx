@@ -9,7 +9,7 @@ export function CudBanner() {
   return (
     <section
       id="cobertura-cud"
-      className="relative w-full max-w-full overflow-x-hidden bg-aqua-pale py-16 md:py-20"
+      className="relative w-full max-w-full bg-aqua-pale py-16 md:py-20"
     >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
