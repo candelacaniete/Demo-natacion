@@ -34,25 +34,25 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-4 sm:pt-4">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full max-w-full px-3 pt-3 sm:px-4 sm:pt-4">
       <div
         className={cn(
-          "mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between border px-4 transition-all duration-300 sm:px-5",
-          "shape-shell backdrop-blur-md",
+          "mx-auto flex h-[4.25rem] w-full max-w-6xl items-center justify-between border px-3 transition-all duration-300 sm:px-5",
+          "rounded-[28px] md:rounded-[60px_20px_48px_28px] backdrop-blur-md",
           scrolled
             ? "border-white/80 bg-white/70 shadow-float"
             : "border-white/55 bg-white/60 shadow-soft"
         )}
       >
-        <Link href="#inicio" className="group flex items-center gap-2.5">
+        <Link href="#inicio" className="group flex min-w-0 items-center gap-2 sm:gap-2.5">
           <span
-            className="flex h-10 w-10 items-center justify-center bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/25 transition group-hover:scale-105"
+            className="flex h-10 w-10 shrink-0 items-center justify-center bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/25 transition group-hover:scale-105"
             style={{ borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%" }}
           >
             <Waves className="h-5 w-5" />
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-[0.95rem] font-bold tracking-tight text-sky-950 sm:text-base">
+          <span className="flex min-w-0 flex-col leading-none">
+            <span className="truncate font-display text-[0.9rem] font-bold tracking-tight text-sky-950 sm:text-base">
               Natación Inclusiva
             </span>
             <span className="mt-1 font-display text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-teal-deep">
@@ -73,7 +73,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <Button asChild variant="whatsapp" size="sm" className="hidden sm:inline-flex">
             <a
               href={WHATSAPP_CONSULTA_URL}
@@ -105,7 +105,7 @@ export function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="shape-shell px-4 py-3 font-display text-base font-semibold text-sky-950 transition hover:bg-white"
+                      className="rounded-[28px] px-4 py-3 font-display text-base font-semibold text-sky-950 transition hover:bg-white md:rounded-[60px_20px_48px_28px]"
                     >
                       {link.label}
                     </Link>

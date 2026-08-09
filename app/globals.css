@@ -41,9 +41,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
     background:
       radial-gradient(ellipse 90% 55% at 0% -5%, #ccefff 0%, transparent 50%),
       radial-gradient(ellipse 70% 45% at 100% 0%, #b8fff4 0%, transparent 48%),
@@ -63,17 +68,31 @@
   font-family: var(--font-sora), "Outfit", sans-serif;
 }
 
-/* Explicit organic shells — 4 unique corners, never A/B/A/B shorthand */
+/* Explicit organic shells — softer on mobile, aggressive from md up */
 @utility shape-shell {
-  border-radius: 60px 20px 48px 28px;
+  border-radius: 32px;
 }
 
 @utility shape-shell-alt {
-  border-radius: 20px 56px 24px 52px;
+  border-radius: 28px;
 }
 
 @utility shape-shell-soft {
-  border-radius: 40px 40px 16px 48px;
+  border-radius: 28px;
+}
+
+@media (min-width: 768px) {
+  .shape-shell {
+    border-radius: 60px 20px 48px 28px;
+  }
+
+  .shape-shell-alt {
+    border-radius: 20px 56px 24px 52px;
+  }
+
+  .shape-shell-soft {
+    border-radius: 40px 40px 16px 48px;
+  }
 }
 
 @utility shape-pill-soft {

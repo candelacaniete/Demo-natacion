@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export function Locations() {
   return (
-    <section id="sedes" className="relative overflow-hidden bg-sky-950 py-20 md:py-24">
+    <section id="sedes" className="relative w-full max-w-full overflow-x-hidden bg-sky-950 py-20 md:py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute left-10 top-16 h-52 w-52 rounded-full bg-teal/15 blur-3xl" />
         <div className="absolute bottom-10 right-8 h-64 w-64 rounded-full bg-ocean/40 blur-3xl" />
