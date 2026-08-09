@@ -40,7 +40,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className="relative overflow-hidden bg-sky-950 py-20 md:py-24">
+    <section id="servicios" className="relative w-full max-w-full overflow-x-hidden bg-sky-950 py-20 md:py-24">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-4rem] top-10 h-64 w-64 rounded-full bg-teal/20 blur-3xl" />
         <div className="absolute bottom-0 right-[-3rem] h-72 w-72 rounded-full bg-warm/15 blur-3xl" />
@@ -69,7 +69,7 @@ export function Services() {
               }}
               whileHover={{ y: -5, scale: 1.03 }}
               className={cn(
-                "group relative flex flex-col overflow-hidden p-7 shadow-float sm:p-8",
+                "group relative flex min-w-0 flex-col overflow-hidden p-6 shadow-float sm:p-8",
                 service.accent,
                 service.shape,
                 service.className
