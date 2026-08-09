@@ -34,8 +34,8 @@ export function Locations() {
               whileHover={{ y: -5, scale: 1.03 }}
               className={`group overflow-hidden border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 shadow-float backdrop-blur-sm sm:p-8 ${
                 index % 2 === 0
-                  ? "rounded-[3.2rem_1.1rem_3.2rem_1.1rem]"
-                  : "rounded-[1.1rem_3.2rem_1.1rem_3.2rem]"
+                  ? "rounded-[2.8rem_1.1rem_2.2rem_2.4rem]"
+                  : "rounded-[1.2rem_2.8rem_1.4rem_2.6rem]"
               }`}
             >
               <div className="flex items-start gap-4">

@@ -15,7 +15,7 @@ export function CudBanner() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ y: -4, scale: 1.01 }}
-          className="relative overflow-hidden rounded-[3.2rem_1.2rem_3.2rem_1.2rem] border border-teal/25 bg-gradient-to-br from-[#e8f7ff] via-[#f0f8ff] to-[#dffff8] p-6 shadow-float sm:p-8 md:p-10"
+          className="relative overflow-hidden rounded-[2.8rem_1.2rem_2.4rem_2.2rem] border border-teal/25 bg-gradient-to-br from-[#e8f7ff] via-[#f0f8ff] to-[#dffff8] p-6 shadow-float sm:rounded-[3.4rem_1.4rem_2.8rem_2.6rem] sm:p-8 md:p-10"
         >
           <div
             aria-hidden="true"

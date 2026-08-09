@@ -61,23 +61,35 @@
 }
 
 @utility radius-blob {
-  border-radius: 60px 20px 60px 20px;
+  border-radius: 42% 58% 48% 52% / 52% 42% 58% 48%;
 }
 
 @utility radius-blob-sm {
-  border-radius: 40px 14px 40px 14px;
+  border-radius: 38% 62% 44% 56% / 56% 38% 62% 44%;
 }
 
 @utility radius-blob-alt {
-  border-radius: 22px 56px 22px 56px;
+  border-radius: 58% 42% 52% 48% / 42% 58% 48% 52%;
 }
 
 @utility radius-drop {
-  border-radius: 70% 30% 55% 45% / 45% 55% 40% 60%;
+  border-radius: 72% 28% 58% 42% / 48% 62% 38% 52%;
 }
 
 @utility radius-pebble {
-  border-radius: 48% 52% 45% 55% / 55% 40% 60% 45%;
+  border-radius: 48% 52% 40% 60% / 58% 36% 64% 42%;
+}
+
+@utility radius-shell {
+  border-radius: 2.8rem 1rem 2.4rem 2.2rem;
+}
+
+@utility radius-shell-alt {
+  border-radius: 1rem 2.8rem 1.2rem 2.6rem;
+}
+
+@utility radius-shell-soft {
+  border-radius: 2.4rem 2.4rem 1rem 2.8rem;
 }
 
 @utility shadow-soft {

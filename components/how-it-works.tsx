@@ -11,7 +11,7 @@ const steps = [
     title: "Contacto Inicial",
     description:
       "Nos escribís por WhatsApp para contarnos tu consulta. Respondemos con calidez y sin vueltas.",
-    radius: "rounded-[2.8rem_1rem_2.8rem_1rem]",
+    radius: "radius-shell",
   },
   {
     number: "02",
@@ -19,7 +19,7 @@ const steps = [
     title: "Entrevista de Evaluación",
     description:
       "Conocemos las necesidades de la persona para asignar el grupo o Profe ideal.",
-    radius: "rounded-[1rem_2.8rem_1rem_2.8rem]",
+    radius: "radius-shell-alt",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ const steps = [
     title: "¡A la Pileta!",
     description:
       "Comenzamos las actividades en la sede que mejor te quede, con acompañamiento cercano.",
-    radius: "rounded-[2.2rem_2.2rem_1rem_2.8rem]",
+    radius: "radius-shell-soft",
   },
 ];
 

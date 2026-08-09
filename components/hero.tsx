@@ -141,8 +141,8 @@ export function Hero() {
             transition={{ duration: 0.75, delay: 0.25 }}
             className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end"
           >
-            <div className="relative overflow-hidden rounded-[4rem_1.5rem_4rem_1.5rem] bg-gradient-to-br from-ocean via-[#136a8a] to-teal p-[3px] shadow-float">
-              <div className="relative overflow-hidden rounded-[3.85rem_1.4rem_3.85rem_1.4rem] bg-gradient-to-br from-[#0f4c81] via-[#0d5f7c] to-[#087f8c] px-7 py-9 text-white sm:px-8 sm:py-10">
+            <div className="relative overflow-hidden rounded-[3.4rem_1.2rem_2.8rem_2.2rem] bg-gradient-to-br from-ocean via-[#136a8a] to-teal p-[3px] shadow-float sm:rounded-[4rem_1.4rem_3.2rem_2.6rem]">
+              <div className="relative overflow-hidden rounded-[3.25rem_1.1rem_2.65rem_2.05rem] bg-gradient-to-br from-[#0f4c81] via-[#0d5f7c] to-[#087f8c] px-7 py-9 text-white sm:rounded-[3.85rem_1.3rem_3.05rem_2.45rem] sm:px-8 sm:py-10">
                 <div
                   aria-hidden="true"
                   className="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-teal/25 blur-2xl"
@@ -183,7 +183,7 @@ export function Hero() {
             <motion.aside
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-7 left-3 right-3 rounded-[2.8rem_1rem_2.4rem_1.4rem] border border-white/90 bg-sand p-4 shadow-float sm:-left-8 sm:right-auto sm:max-w-[18rem]"
+              className="absolute -bottom-7 left-3 right-3 rounded-[2.6rem_1.1rem_2.1rem_2.4rem] border border-white/90 bg-sand p-4 shadow-float sm:-left-8 sm:right-auto sm:max-w-[18rem]"
             >
               <div className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-[1.25rem_0.5rem_1.25rem_0.5rem] bg-warm/15 text-warm-deep">
