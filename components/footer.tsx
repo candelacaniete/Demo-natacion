@@ -12,20 +12,23 @@ export function Footer() {
   const phoneDisplay = "+54 9 11 5801-9827";
 
   return (
-    <footer className="relative overflow-hidden bg-ocean-deep text-cyan-50">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-sky-950 via-ocean-deep to-[#0a3d4f] text-cyan-50">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-30"
+        className="pointer-events-none absolute inset-0 opacity-40"
       >
-        <div className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-teal/30 blur-3xl" />
-        <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-ocean/40 blur-3xl" />
+        <div className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-teal/25 blur-3xl" />
+        <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-warm/15 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white ring-1 ring-white/15">
+              <span
+                className="flex h-11 w-11 items-center justify-center bg-white/10 text-white ring-1 ring-white/15"
+                style={{ borderRadius: "45% 55% 50% 50% / 55% 40% 60% 45%" }}
+              >
                 <Waves className="h-5 w-5" />
               </span>
               <div>
@@ -53,7 +56,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-cyan-50/85 transition hover:text-white"
+                    className="font-display text-sm text-cyan-50/85 transition hover:text-white"
                   >
                     {link.label}
                   </Link>

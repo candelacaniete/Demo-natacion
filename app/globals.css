@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0b2740;
+  --background: #eef7ff;
+  --foreground: #082f49;
   --ocean: #0f4c81;
-  --ocean-deep: #0b2740;
-  --teal: #00a896;
-  --teal-deep: #057a6d;
-  --warm: #e07a3d;
-  --warm-deep: #c45f24;
+  --ocean-deep: #0a355c;
+  --sky-ink: #082f49;
+  --teal: #00ced1;
+  --teal-deep: #099ea1;
+  --aqua-pale: #f0f8ff;
+  --aqua-mist: #d9f0ff;
+  --foam: #f7fcff;
+  --warm: #ef8a45;
+  --warm-deep: #d96b28;
   --whatsapp: #25d366;
-  --water: #f0f7ff;
+  --sand: #fff6eb;
+  --coral-soft: #ffe8d6;
 }
 
 @theme inline {
@@ -18,14 +23,19 @@
   --color-foreground: var(--foreground);
   --color-ocean: var(--ocean);
   --color-ocean-deep: var(--ocean-deep);
+  --color-sky-ink: var(--sky-ink);
   --color-teal: var(--teal);
   --color-teal-deep: var(--teal-deep);
+  --color-aqua-pale: var(--aqua-pale);
+  --color-aqua-mist: var(--aqua-mist);
+  --color-foam: var(--foam);
   --color-warm: var(--warm);
   --color-warm-deep: var(--warm-deep);
   --color-whatsapp: var(--whatsapp);
-  --color-water: var(--water);
+  --color-sand: var(--sand);
+  --color-coral-soft: var(--coral-soft);
   --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-outfit);
+  --font-display: var(--font-sora);
 }
 
 @layer base {
@@ -34,43 +44,155 @@
   }
 
   body {
-    background: var(--background);
-    color: var(--foreground);
+    background:
+      radial-gradient(ellipse 90% 55% at 0% -5%, #ccefff 0%, transparent 50%),
+      radial-gradient(ellipse 70% 45% at 100% 0%, #b8fff4 0%, transparent 48%),
+      radial-gradient(ellipse 50% 35% at 50% 100%, #ffe8d6 0%, transparent 40%),
+      var(--aqua-pale);
+    color: var(--sky-ink);
     font-family: var(--font-dm-sans), "Nunito", sans-serif;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--teal) 28%, white);
-    color: var(--ocean-deep);
+    background: color-mix(in oklab, var(--teal) 40%, white);
+    color: var(--sky-ink);
   }
 }
 
 @utility font-display {
-  font-family: var(--font-outfit), "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-sora), "Outfit", sans-serif;
+}
+
+/* Explicit organic shells — 4 unique corners, never A/B/A/B shorthand */
+@utility shape-shell {
+  border-radius: 60px 20px 48px 28px;
+}
+
+@utility shape-shell-alt {
+  border-radius: 20px 56px 24px 52px;
+}
+
+@utility shape-shell-soft {
+  border-radius: 40px 40px 16px 48px;
+}
+
+@utility shape-pill-soft {
+  border-radius: 28px 14px 28px 14px;
+}
+
+@utility shape-drop {
+  border-radius: 68% 32% 58% 42% / 46% 54% 46% 54%;
+}
+
+@utility shape-pebble {
+  border-radius: 55% 45% 42% 58% / 48% 52% 48% 52%;
+}
+
+@utility shape-note {
+  border-radius: 32px 18px 42px 22px;
+}
+
+@utility shadow-soft {
+  box-shadow: 0 22px 50px -18px rgb(8 47 73 / 0.16);
+}
+
+@utility shadow-float {
+  box-shadow:
+    0 20px 44px -14px rgb(15 76 129 / 0.2),
+    0 6px 16px -8px rgb(0 206 209 / 0.22);
+}
+
+@utility shadow-deep {
+  box-shadow: 0 28px 70px -22px rgb(8 47 73 / 0.28);
 }
 
 @keyframes accordion-down {
   from {
     height: 0;
+    opacity: 0.35;
   }
   to {
     height: var(--radix-accordion-content-height);
+    opacity: 1;
   }
 }
 
 @keyframes accordion-up {
   from {
     height: var(--radix-accordion-content-height);
+    opacity: 1;
   }
   to {
     height: 0;
+    opacity: 0.35;
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  75% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+@keyframes bubble-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wave-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-18px);
   }
 }
 
 @utility animate-accordion-down {
-  animation: accordion-down 0.22s ease-out;
+  animation: accordion-down 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @utility animate-accordion-up {
-  animation: accordion-up 0.2s ease-out;
+  animation: accordion-up 0.22s ease-out;
+}
+
+@utility animate-float-soft {
+  animation: float-soft 5.8s ease-in-out infinite;
+}
+
+@utility animate-pulse-ring {
+  animation: pulse-ring 2.1s ease-out infinite;
+}
+
+@utility animate-bubble-bob {
+  animation: bubble-bob 3s ease-in-out infinite;
+}
+
+@utility animate-wave-drift {
+  animation: wave-drift 10s ease-in-out infinite;
 }

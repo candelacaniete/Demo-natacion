@@ -13,23 +13,43 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function WhatsappFloat() {
   return (
-    <motion.a
-      href={WHATSAPP_CONSULTA_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Escribinos por WhatsApp"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.8, duration: 0.4 }}
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.96 }}
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-xl shadow-whatsapp/40 md:bottom-7 md:right-7"
-    >
-      <span
-        aria-hidden="true"
-        className="absolute inset-0 animate-ping rounded-full bg-whatsapp/40"
-      />
-      <WhatsAppIcon className="relative h-7 w-7" />
-    </motion.a>
+    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 md:bottom-7 md:right-7">
+      <motion.div
+        initial={{ opacity: 0, y: 12, scale: 0.92 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 1, duration: 0.45 }}
+        className="animate-bubble-bob relative max-w-[12.8rem] bg-white px-3.5 py-2.5 text-left shadow-float ring-1 ring-ocean/10"
+        style={{ borderRadius: "22px 22px 8px 22px" }}
+      >
+        <p className="font-display text-xs font-semibold leading-snug text-sky-950">
+          ¡Hablame por WhatsApp!
+        </p>
+        <span
+          aria-hidden="true"
+          className="absolute -bottom-1.5 right-4 h-3 w-3 rotate-45 bg-white ring-1 ring-ocean/10"
+        />
+      </motion.div>
+
+      <motion.a
+        href={WHATSAPP_CONSULTA_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Escribinos por WhatsApp"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8, duration: 0.4 }}
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.96 }}
+        className="relative flex h-14 w-14 items-center justify-center bg-whatsapp text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.65)]"
+        style={{ borderRadius: "42% 58% 50% 50% / 55% 40% 60% 45%" }}
+      >
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 animate-pulse-ring bg-whatsapp"
+          style={{ borderRadius: "42% 58% 50% 50% / 55% 40% 60% 45%" }}
+        />
+        <WhatsAppIcon className="relative h-7 w-7" />
+      </motion.a>
+    </div>
   );
 }

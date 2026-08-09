@@ -41,7 +41,7 @@ export function Faq() {
   return (
     <section
       id="preguntas-frecuentes"
-      className="relative bg-slate-50 py-20 md:py-24"
+      className="relative bg-aqua-pale py-20 md:py-24"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -52,10 +52,10 @@ export function Faq() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.55 }}
           className="mt-10"
         >
           <Accordion type="single" collapsible className="w-full">

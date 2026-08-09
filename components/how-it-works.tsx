@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ClipboardList, MessageSquareHeart, Waves } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
+import { cn } from "@/lib/utils";
 
 const steps = [
   {
@@ -11,6 +12,7 @@ const steps = [
     title: "Contacto Inicial",
     description:
       "Nos escribís por WhatsApp para contarnos tu consulta. Respondemos con calidez y sin vueltas.",
+    shape: "shape-shell",
   },
   {
     number: "02",
@@ -18,6 +20,7 @@ const steps = [
     title: "Entrevista de Evaluación",
     description:
       "Conocemos las necesidades de la persona para asignar el grupo o Profe ideal.",
+    shape: "shape-shell-alt",
   },
   {
     number: "03",
@@ -25,12 +28,13 @@ const steps = [
     title: "¡A la Pileta!",
     description:
       "Comenzamos las actividades en la sede que mejor te quede, con acompañamiento cercano.",
+    shape: "shape-shell-soft",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="relative bg-slate-50 py-20 md:py-24">
+    <section className="relative bg-aqua-pale py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Camino simple"
@@ -42,28 +46,36 @@ export function HowItWorks() {
         <div className="relative mt-14">
           <div
             aria-hidden="true"
-            className="absolute left-[8%] right-[8%] top-10 hidden h-px bg-gradient-to-r from-transparent via-teal/35 to-transparent md:block"
+            className="absolute left-[10%] right-[10%] top-14 hidden h-[3px] rounded-full bg-gradient-to-r from-transparent via-teal/50 to-transparent md:block"
           />
 
           <ol className="grid gap-6 md:grid-cols-3">
             {steps.map((step, index) => (
               <motion.li
                 key={step.title}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.5, delay: index * 0.12 }}
-                className="relative rounded-[2rem] bg-[#f0f7ff] p-6 shadow-xl shadow-sky-900/5 ring-1 ring-ocean/5"
+                transition={{ duration: 0.55, delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.03 }}
+                className={cn(
+                  "relative bg-foam p-6 shadow-float ring-1 ring-ocean/5 sm:p-7",
+                  step.shape,
+                  index === 1 && "md:mt-8"
+                )}
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-ocean shadow-md shadow-sky-900/5">
+                  <span
+                    className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/20"
+                    style={{ borderRadius: "45% 55% 50% 50% / 55% 40% 60% 45%" }}
+                  >
                     <step.icon className="h-5 w-5" />
                   </span>
-                  <span className="font-display text-3xl font-bold text-teal/40">
+                  <span className="font-display text-3xl font-bold text-teal/45">
                     {step.number}
                   </span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-ocean-deep">
+                <h3 className="font-display text-xl font-bold text-sky-950">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
