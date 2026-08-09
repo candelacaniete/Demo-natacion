@@ -30,19 +30,18 @@ export function WaveDivider({
     <div
       aria-hidden="true"
       className={cn(
-        "pointer-events-none relative z-10 -mb-px w-full max-w-full overflow-hidden leading-none",
+        "pointer-events-none relative z-10 -mb-px w-full max-w-full overflow-x-clip leading-none",
         className
       )}
     >
+      {/* Keep width at 100% — animate via transform so we never expand the page */}
       <div
         className={cn(
-          "relative h-14 w-[140%] max-w-none md:h-20",
+          "relative h-14 w-full md:h-20",
           flip && "rotate-180",
           animated && "animate-wave-tide"
         )}
-        style={{ marginLeft: "-20%" }}
       >
-        {/* Accent tide layer for visibility */}
         <svg
           className={cn(
             "absolute inset-0 h-full w-full",
@@ -59,7 +58,6 @@ export function WaveDivider({
           />
         </svg>
 
-        {/* Main fill matching next section */}
         <svg
           className="absolute inset-0 h-full w-full"
           viewBox="0 0 1440 120"
