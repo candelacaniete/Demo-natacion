@@ -45,7 +45,7 @@ export function Locations() {
                     className="absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full bg-warm ring-2 ring-sky-950"
                   />
                 </span>
-                <div className="flex-1">
+                <div className="min-w-0 flex-1">
                   <h3 className="font-display text-2xl font-bold text-white">
                     {location.name}
                   </h3>
@@ -64,9 +64,11 @@ export function Locations() {
                   </Button>
                 </div>
               </div>
+
+              {/* Soft separator — no hard blue bars */}
               <div
                 aria-hidden="true"
-                className="mt-7 h-2 rounded-full bg-gradient-to-r from-teal via-ocean to-warm/70 opacity-70 transition group-hover:opacity-100"
+                className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-cyan-100/40 to-transparent"
               />
             </motion.article>
           ))}
