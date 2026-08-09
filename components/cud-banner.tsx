@@ -18,7 +18,7 @@ export function CudBanner() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ y: -5, scale: 1.01 }}
-          className="relative mx-auto w-full max-w-full overflow-hidden rounded-[32px] border border-teal/30 bg-[linear-gradient(135deg,#e7f7ff_0%,#f0f8ff_45%,#d8fff8_100%)] p-6 shadow-float sm:p-10 md:rounded-[60px_20px_48px_28px]"
+          className="liquid-drop relative mx-auto w-full max-w-full overflow-hidden border border-teal/30 bg-[linear-gradient(135deg,#e7f7ff_0%,#f0f8ff_45%,#d8fff8_100%)] p-6 shadow-float will-change-transform sm:p-10"
         >
           <div
             aria-hidden="true"

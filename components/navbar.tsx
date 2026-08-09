@@ -27,28 +27,22 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full max-w-full px-3 pt-3 sm:px-4 sm:pt-4">
-      <div
-        className={cn(
-          "mx-auto flex h-[4.25rem] w-full max-w-6xl items-center justify-between border px-3 transition-all duration-300 sm:px-5",
-          "rounded-[28px] md:rounded-[60px_20px_48px_28px] backdrop-blur-md",
-          scrolled
-            ? "border-white/80 bg-white/70 shadow-float"
-            : "border-white/55 bg-white/60 shadow-soft"
-        )}
-      >
-        <Link href="#inicio" className="group flex min-w-0 items-center gap-2 sm:gap-2.5">
-          <span
-            className="flex h-10 w-10 shrink-0 items-center justify-center bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/25 transition group-hover:scale-105"
-            style={{ borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%" }}
-          >
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-40 w-full max-w-full border-b border-sky-100 bg-white/80 backdrop-blur-md transition-shadow duration-300",
+        scrolled && "shadow-soft"
+      )}
+    >
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:h-[4.25rem] sm:px-6 lg:px-8">
+        <Link href="#inicio" className="group flex min-w-0 items-center gap-2.5">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[30px_15px_30px_15px] bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/25 transition-all duration-500 ease-in-out group-hover:rounded-[15px_30px_15px_30px] sm:h-10 sm:w-10">
             <Waves className="h-5 w-5" />
           </span>
           <span className="flex min-w-0 flex-col leading-none">
@@ -66,7 +60,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="shape-pill-soft px-3.5 py-2 font-display text-sm font-medium text-slate-600 transition hover:bg-aqua-mist hover:text-ocean"
+              className="rounded-xl px-3.5 py-2 font-display text-sm font-medium text-slate-600 transition hover:bg-aqua-mist hover:text-ocean"
             >
               {link.label}
             </Link>
@@ -74,7 +68,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <Button asChild variant="whatsapp" size="sm" className="hidden sm:inline-flex">
+          <Button asChild variant="whatsapp" size="sm" className="hidden md:inline-flex">
             <a
               href={WHATSAPP_CONSULTA_URL}
               target="_blank"
@@ -105,7 +99,7 @@ export function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="rounded-[28px] px-4 py-3 font-display text-base font-semibold text-sky-950 transition hover:bg-white md:rounded-[60px_20px_48px_28px]"
+                      className="liquid-drop px-4 py-3 font-display text-base font-semibold text-sky-950 transition hover:bg-white"
                     >
                       {link.label}
                     </Link>
