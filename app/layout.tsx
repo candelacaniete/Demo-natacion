@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans, Outfit } from "next/font/google";
+import { DM_Sans, Sora } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
 });
@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${outfit.variable} ${dmSans.variable} h-full`}>
+    <html lang="es" className={`${sora.variable} ${dmSans.variable} h-full`}>
       <body className="min-h-full font-sans antialiased">{children}</body>
     </html>
   );

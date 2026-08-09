@@ -27,31 +27,31 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-all duration-300",
-        scrolled
-          ? "border-b border-ocean/8 bg-white/85 shadow-lg shadow-sky-900/5 backdrop-blur-xl"
-          : "bg-transparent"
-      )}
-    >
-      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-4 sm:pt-4">
+      <div
+        className={cn(
+          "mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between rounded-[2rem_1rem_2rem_1rem] border px-4 transition-all duration-300 sm:px-5",
+          scrolled
+            ? "border-white/80 bg-white/70 shadow-float backdrop-blur-md"
+            : "border-white/50 bg-white/55 shadow-soft backdrop-blur-md"
+        )}
+      >
         <Link href="#inicio" className="group flex items-center gap-2.5">
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/20 transition group-hover:scale-105">
+          <span className="flex h-10 w-10 items-center justify-center rounded-[1.35rem_0.55rem_1.35rem_0.55rem] bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/25 transition group-hover:scale-105">
             <Waves className="h-5 w-5" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-sm font-bold tracking-tight text-ocean-deep sm:text-base">
+            <span className="font-display text-[0.95rem] font-bold tracking-tight text-sky-ink sm:text-base">
               Natación Inclusiva
             </span>
-            <span className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-teal">
+            <span className="mt-1 font-display text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-teal-deep">
               Pilar
             </span>
           </span>
@@ -62,7 +62,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-xl px-3.5 py-2 text-sm font-medium text-slate-600 transition hover:bg-water hover:text-ocean"
+              className="rounded-[1rem_0.45rem_1rem_0.45rem] px-3.5 py-2 font-display text-sm font-medium text-slate-600 transition hover:bg-aqua-mist hover:text-ocean"
             >
               {link.label}
             </Link>
@@ -101,7 +101,7 @@ export function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="rounded-2xl px-4 py-3 font-display text-base font-semibold text-ocean-deep transition hover:bg-white"
+                      className="rounded-[1.4rem_0.65rem_1.4rem_0.65rem] px-4 py-3 font-display text-base font-semibold text-sky-ink transition hover:bg-white"
                     >
                       {link.label}
                     </Link>

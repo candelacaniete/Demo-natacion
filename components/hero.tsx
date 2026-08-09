@@ -10,40 +10,40 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100svh] overflow-hidden bg-gradient-to-br from-[#e8f4ff] via-[#f7fbff] to-[#dff7f3]"
+      className="relative min-h-[100svh] overflow-hidden bg-gradient-to-br from-[#dff3ff] via-[#f0f8ff] to-[#d8fff8]"
     >
-      {/* Atmospheric water plane */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-16 h-72 w-72 rounded-full bg-teal/15 blur-3xl" />
-        <div className="absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-ocean/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-64 w-96 rounded-full bg-cyan-300/20 blur-3xl" />
+        <div className="absolute -left-28 top-10 h-[22rem] w-[22rem] rounded-full bg-teal/20 blur-3xl" />
+        <div className="absolute right-[-6rem] top-0 h-[28rem] w-[28rem] rounded-full bg-ocean/15 blur-3xl" />
+        <div className="absolute bottom-10 left-1/3 h-64 w-[28rem] rounded-full bg-warm/10 blur-3xl" />
         <svg
-          className="absolute inset-x-0 bottom-0 h-[45%] w-full opacity-40"
-          viewBox="0 0 1440 400"
+          className="absolute inset-x-0 bottom-0 h-[42%] w-full"
+          viewBox="0 0 1440 420"
           preserveAspectRatio="none"
         >
           <path
-            fill="url(#heroWave)"
-            d="M0,220 C240,160 360,300 600,240 C840,180 960,80 1200,140 C1320,170 1380,210 1440,190 L1440,400 L0,400 Z"
+            fill="url(#heroFlow)"
+            d="M0,210 C220,140 360,300 580,230 C800,160 960,70 1180,140 C1300,175 1380,220 1440,190 L1440,420 L0,420 Z"
           />
           <defs>
-            <linearGradient id="heroWave" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#00a896" stopOpacity="0.22" />
-              <stop offset="100%" stopColor="#0f4c81" stopOpacity="0.12" />
+            <linearGradient id="heroFlow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#00CED1" stopOpacity="0.28" />
+              <stop offset="55%" stopColor="#0f4c81" stopOpacity="0.16" />
+              <stop offset="100%" stopColor="#f08a4b" stopOpacity="0.12" />
             </linearGradient>
           </defs>
         </svg>
       </div>
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-4 pb-24 pt-28 sm:px-6 lg:px-8 lg:pt-32">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-4 pb-28 pt-32 sm:px-6 lg:px-8 lg:pt-36">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Badge variant="teal" className="mb-5 px-4 py-1.5 text-[0.8rem]">
+              <Badge variant="teal" className="mb-5 normal-case tracking-[0.08em]">
                 Admisiones Abiertas — Temporada 2026
               </Badge>
             </motion.div>
@@ -52,33 +52,43 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.05 }}
-              className="mb-3 font-display text-sm font-bold uppercase tracking-[0.2em] text-ocean"
+              className="mb-3 font-display text-sm font-bold uppercase tracking-[0.22em] text-ocean"
             >
               Natación Inclusiva Pilar
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 22 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-xl font-display text-[2.15rem] font-bold leading-[1.12] tracking-tight text-ocean-deep sm:text-5xl lg:text-[3.35rem]"
+              transition={{ duration: 0.65, delay: 0.1 }}
+              className="max-w-xl font-display text-[2.2rem] font-bold leading-[1.1] tracking-tight text-sky-ink sm:text-5xl lg:text-[3.4rem]"
             >
               Un espacio de natación e hidroterapia donde{" "}
-              <span className="relative inline-block text-teal-deep">
-                todos podemos nadar
-                <span
+              <span className="relative inline-block">
+                <span className="relative z-10 text-sky-ink">todos</span>
+                <svg
                   aria-hidden="true"
-                  className="absolute -bottom-1 left-0 h-3 w-full rounded-full bg-warm/25"
-                />
-              </span>
-              .
+                  className="absolute -bottom-1 left-0 h-3 w-full"
+                  viewBox="0 0 160 14"
+                  fill="none"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M3 10 C28 3, 55 13, 82 7 C108 2, 132 11, 157 6"
+                    stroke="#00CED1"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>{" "}
+              podemos nadar.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.18 }}
-              className="mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg"
+              className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg"
             >
               Clases adaptadas, estimulación y terapias acuáticas con atención
               personalizada para niños, jóvenes y adultos en Pilar.
@@ -88,13 +98,13 @@ export function Hero() {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.26 }}
-              className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+              className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
             >
-              <div className="inline-flex items-center gap-2 rounded-2xl bg-white/75 px-3.5 py-2.5 text-sm font-medium text-slate-700 shadow-md shadow-sky-900/5 ring-1 ring-ocean/8">
+              <div className="inline-flex items-center gap-2 rounded-[1.4rem_0.65rem_1.4rem_0.65rem] bg-white/80 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-soft ring-1 ring-ocean/8">
                 <span className="h-2.5 w-2.5 rounded-full bg-teal" aria-hidden="true" />
                 Particulares y Obra Social con CUD
               </div>
-              <div className="inline-flex items-center gap-2 rounded-2xl bg-white/75 px-3.5 py-2.5 text-sm font-medium text-slate-700 shadow-md shadow-sky-900/5 ring-1 ring-ocean/8">
+              <div className="inline-flex items-center gap-2 rounded-[1.4rem_0.65rem_1.4rem_0.65rem] bg-white/80 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-soft ring-1 ring-ocean/8">
                 <MapPin className="h-4 w-4 text-warm" />
                 Sedes en Club Sportivo Pilar y Acuasport
               </div>
@@ -126,23 +136,23 @@ export function Hero() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 28, scale: 0.96 }}
+            initial={{ opacity: 0, y: 30, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.28 }}
+            transition={{ duration: 0.75, delay: 0.25 }}
             className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end"
           >
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-ocean via-[#136a8a] to-teal p-1 shadow-2xl shadow-ocean/20">
-              <div className="relative overflow-hidden rounded-[2.3rem] bg-gradient-to-br from-[#0f4c81] to-[#087f8c] px-6 py-8 text-white sm:px-8 sm:py-10">
+            <div className="relative overflow-hidden rounded-[4rem_1.5rem_4rem_1.5rem] bg-gradient-to-br from-ocean via-[#136a8a] to-teal p-[3px] shadow-float">
+              <div className="relative overflow-hidden rounded-[3.85rem_1.4rem_3.85rem_1.4rem] bg-gradient-to-br from-[#0f4c81] via-[#0d5f7c] to-[#087f8c] px-7 py-9 text-white sm:px-8 sm:py-10">
                 <div
                   aria-hidden="true"
-                  className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-2xl"
+                  className="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-teal/25 blur-2xl"
                 />
                 <div
                   aria-hidden="true"
-                  className="absolute -bottom-16 left-8 h-44 w-44 rounded-full bg-teal/30 blur-2xl"
+                  className="absolute -bottom-16 left-4 h-48 w-48 rounded-full bg-warm/20 blur-2xl"
                 />
 
-                <p className="relative font-display text-sm font-semibold uppercase tracking-[0.18em] text-cyan-100">
+                <p className="relative font-display text-xs font-semibold uppercase tracking-[0.2em] text-teal">
                   En el agua
                 </p>
                 <p className="relative mt-4 font-display text-3xl font-bold leading-tight sm:text-4xl">
@@ -154,13 +164,13 @@ export function Hero() {
                 </p>
 
                 <div className="relative mt-8 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-sm ring-1 ring-white/15">
+                  <div className="rounded-[1.6rem_0.7rem_1.6rem_0.7rem] bg-white/10 p-4 backdrop-blur-sm ring-1 ring-white/15">
                     <p className="font-display text-2xl font-bold">+100</p>
                     <p className="mt-1 text-xs text-cyan-50/90">
                       familias acompañadas
                     </p>
                   </div>
-                  <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-sm ring-1 ring-white/15">
+                  <div className="rounded-[0.7rem_1.6rem_0.7rem_1.6rem] bg-white/10 p-4 backdrop-blur-sm ring-1 ring-white/15">
                     <p className="font-display text-2xl font-bold">2</p>
                     <p className="mt-1 text-xs text-cyan-50/90">
                       sedes en Pilar
@@ -171,19 +181,19 @@ export function Hero() {
             </div>
 
             <motion.aside
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 left-4 right-4 rounded-[1.75rem] border border-white/80 bg-[#fffdf8] p-4 shadow-xl shadow-sky-900/10 sm:-left-6 sm:right-auto sm:max-w-[17.5rem]"
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-7 left-3 right-3 rounded-[2.8rem_1rem_2.4rem_1.4rem] border border-white/90 bg-sand p-4 shadow-float sm:-left-8 sm:right-auto sm:max-w-[18rem]"
             >
               <div className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-warm/15 text-warm-deep">
+                <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-[1.25rem_0.5rem_1.25rem_0.5rem] bg-warm/15 text-warm-deep">
                   <HeartHandshake className="h-4 w-4" />
                 </span>
                 <div>
-                  <p className="font-display text-sm font-bold text-ocean-deep">
+                  <p className="font-sans text-[0.95rem] font-semibold leading-snug text-sky-ink">
                     “Por fin encontramos un lugar donde se siente incluida.”
                   </p>
-                  <p className="mt-1 text-xs text-slate-500">
+                  <p className="mt-1.5 font-display text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     Mamá de alumna · Pilar
                   </p>
                 </div>

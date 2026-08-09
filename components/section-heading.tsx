@@ -9,6 +9,7 @@ type SectionHeadingProps = {
   highlight?: string;
   description?: string;
   align?: "left" | "center";
+  tone?: "light" | "dark";
   className?: string;
 };
 
@@ -18,18 +19,18 @@ export function SectionHeading({
   highlight,
   description,
   align = "center",
+  tone = "light",
   className,
 }: SectionHeadingProps) {
-  const parts = highlight && title.includes(highlight)
-    ? title.split(highlight)
-    : null;
+  const parts =
+    highlight && title.includes(highlight) ? title.split(highlight) : null;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
         "mx-auto max-w-3xl",
         align === "center" ? "text-center" : "text-left",
@@ -37,20 +38,48 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <p className="mb-3 font-display text-sm font-semibold uppercase tracking-[0.18em] text-teal">
+        <p
+          className={cn(
+            "mb-3 inline-flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.22em]",
+            tone === "dark" ? "text-teal" : "text-teal-deep"
+          )}
+        >
+          <span
+            aria-hidden="true"
+            className={cn(
+              "h-1.5 w-1.5 rounded-full",
+              tone === "dark" ? "bg-teal" : "bg-teal-deep"
+            )}
+          />
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-3xl font-bold tracking-tight text-ocean-deep md:text-4xl lg:text-[2.75rem] lg:leading-tight">
+
+      <h2
+        className={cn(
+          "font-display text-3xl font-bold tracking-tight md:text-4xl lg:text-[2.85rem] lg:leading-[1.15]",
+          tone === "dark" ? "text-white" : "text-sky-ink"
+        )}
+      >
         {parts ? (
           <>
             {parts[0]}
-            <span className="relative inline-block text-ocean">
+            <span className="relative inline-block">
               {highlight}
-              <span
+              <svg
                 aria-hidden="true"
-                className="absolute -bottom-1 left-0 h-2.5 w-full rounded-full bg-teal/25"
-              />
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 200 12"
+                fill="none"
+              >
+                <path
+                  d="M2 8 C40 2, 80 12, 120 6 C150 2, 175 8, 198 5"
+                  stroke={tone === "dark" ? "#00CED1" : "#00CED1"}
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  opacity="0.85"
+                />
+              </svg>
             </span>
             {parts[1]}
           </>
@@ -58,8 +87,14 @@ export function SectionHeading({
           title
         )}
       </h2>
+
       {description ? (
-        <p className="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+        <p
+          className={cn(
+            "mt-5 text-base leading-relaxed md:text-lg",
+            tone === "dark" ? "text-cyan-50/85" : "text-slate-600"
+          )}
+        >
           {description}
         </p>
       ) : null}

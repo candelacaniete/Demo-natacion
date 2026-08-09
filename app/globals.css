@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0b2740;
+  --background: #f0f8ff;
+  --foreground: #082f49;
   --ocean: #0f4c81;
-  --ocean-deep: #0b2740;
-  --teal: #00a896;
-  --teal-deep: #057a6d;
-  --warm: #e07a3d;
-  --warm-deep: #c45f24;
+  --ocean-deep: #0c3a63;
+  --sky-ink: #082f49;
+  --teal: #00ced1;
+  --teal-deep: #0aa8ab;
+  --aqua-pale: #f0f8ff;
+  --aqua-mist: #e4f4ff;
+  --foam: #f7fcff;
+  --warm: #f08a4b;
+  --warm-deep: #d96b28;
   --whatsapp: #25d366;
-  --water: #f0f7ff;
+  --sand: #fff8f1;
 }
 
 @theme inline {
@@ -18,14 +22,18 @@
   --color-foreground: var(--foreground);
   --color-ocean: var(--ocean);
   --color-ocean-deep: var(--ocean-deep);
+  --color-sky-ink: var(--sky-ink);
   --color-teal: var(--teal);
   --color-teal-deep: var(--teal-deep);
+  --color-aqua-pale: var(--aqua-pale);
+  --color-aqua-mist: var(--aqua-mist);
+  --color-foam: var(--foam);
   --color-warm: var(--warm);
   --color-warm-deep: var(--warm-deep);
   --color-whatsapp: var(--whatsapp);
-  --color-water: var(--water);
+  --color-sand: var(--sand);
   --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-outfit);
+  --font-display: var(--font-sora);
 }
 
 @layer base {
@@ -34,43 +42,127 @@
   }
 
   body {
-    background: var(--background);
-    color: var(--foreground);
+    background:
+      radial-gradient(ellipse 80% 50% at 10% -10%, #d9f3ff 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 0%, #c8fff8 0%, transparent 45%),
+      var(--aqua-pale);
+    color: var(--sky-ink);
     font-family: var(--font-dm-sans), "Nunito", sans-serif;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--teal) 28%, white);
-    color: var(--ocean-deep);
+    background: color-mix(in oklab, var(--teal) 35%, white);
+    color: var(--sky-ink);
   }
 }
 
 @utility font-display {
-  font-family: var(--font-outfit), "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-sora), "Outfit", sans-serif;
+}
+
+@utility radius-blob {
+  border-radius: 60px 20px 60px 20px;
+}
+
+@utility radius-blob-sm {
+  border-radius: 40px 14px 40px 14px;
+}
+
+@utility radius-blob-alt {
+  border-radius: 22px 56px 22px 56px;
+}
+
+@utility radius-drop {
+  border-radius: 70% 30% 55% 45% / 45% 55% 40% 60%;
+}
+
+@utility radius-pebble {
+  border-radius: 48% 52% 45% 55% / 55% 40% 60% 45%;
+}
+
+@utility shadow-soft {
+  box-shadow: 0 24px 60px -20px rgb(8 47 73 / 0.14);
+}
+
+@utility shadow-float {
+  box-shadow:
+    0 18px 40px -16px rgb(15 76 129 / 0.18),
+    0 4px 12px -6px rgb(0 206 209 / 0.2);
 }
 
 @keyframes accordion-down {
   from {
     height: 0;
+    opacity: 0.4;
   }
   to {
     height: var(--radix-accordion-content-height);
+    opacity: 1;
   }
 }
 
 @keyframes accordion-up {
   from {
     height: var(--radix-accordion-content-height);
+    opacity: 1;
   }
   to {
     height: 0;
+    opacity: 0.4;
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+@keyframes bubble-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 
 @utility animate-accordion-down {
-  animation: accordion-down 0.22s ease-out;
+  animation: accordion-down 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @utility animate-accordion-up {
-  animation: accordion-up 0.2s ease-out;
+  animation: accordion-up 0.22s ease-out;
+}
+
+@utility animate-float-soft {
+  animation: float-soft 5.5s ease-in-out infinite;
+}
+
+@utility animate-pulse-ring {
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+@utility animate-bubble-bob {
+  animation: bubble-bob 3.2s ease-in-out infinite;
 }
