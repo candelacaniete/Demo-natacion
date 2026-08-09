@@ -17,26 +17,26 @@ function OrganicUnderline() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute bottom-[-8px] left-0 right-0 h-[10px] w-full"
-      viewBox="0 0 200 16"
+      className="pointer-events-none absolute bottom-[-10px] left-0 right-0 z-0 h-3 w-full overflow-visible"
+      viewBox="0 0 220 20"
       fill="none"
       preserveAspectRatio="none"
     >
-      {/* Hand-drawn double wave scribble */}
+      {/* Hand-drawn wave scribble — thicker for mobile legibility */}
       <path
-        d="M2 11 C18 4, 32 14, 48 8 C64 2, 78 13, 96 7 C114 1, 128 12, 146 6 C164 1, 178 11, 198 5"
+        d="M3 13 C22 5, 38 17, 58 9 C78 2, 94 16, 116 8 C136 1, 154 15, 176 7 C192 2, 206 14, 217 8"
         stroke="#00CED1"
-        strokeWidth="3.2"
+        strokeWidth="4.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M6 13 C24 7, 40 15, 58 10 C76 5, 90 14, 108 9 C126 4, 142 13, 160 8 C176 4, 188 12, 196 9"
+        d="M8 16 C28 9, 46 18, 66 11 C86 5, 104 17, 124 10 C144 4, 162 16, 182 9 C198 5, 210 14, 216 11"
         stroke="#00CED1"
-        strokeWidth="1.6"
+        strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        opacity="0.55"
+        opacity="0.5"
       />
     </svg>
   );
@@ -81,7 +81,7 @@ export function Hero() {
               </span>
               <span className="mt-3 block">
                 Un espacio donde{" "}
-                <span className="relative inline-block pb-1">
+                <span className="relative inline-block px-0.5 pb-2">
                   <span className="relative z-10">todos</span>
                   <OrganicUnderline />
                 </span>{" "}
