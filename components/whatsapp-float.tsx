@@ -45,7 +45,7 @@ export function WhatsappFloat() {
       >
         <span
           aria-hidden="true"
-          className="absolute inset-0 animate-pulse-ring rounded-[inherit] bg-whatsapp"
+          className="pointer-events-none absolute inset-0 animate-pulse-ring rounded-[inherit] bg-whatsapp"
         />
         <WhatsAppIcon className="relative h-6 w-6 md:h-7 md:w-7" />
       </motion.a>

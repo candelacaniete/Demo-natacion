@@ -41,12 +41,20 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    position: relative !important;
+    height: auto !important;
+    min-height: 100vh;
+    overflow-x: visible;
+    overflow-y: auto !important;
     max-width: 100%;
   }
 
   body {
-    overflow-x: hidden;
+    position: relative !important;
+    height: auto !important;
+    min-height: 100vh;
+    overflow-x: visible;
+    overflow-y: auto !important;
     width: 100%;
     max-width: 100%;
     background:

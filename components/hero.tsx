@@ -17,10 +17,13 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative w-full max-w-full overflow-hidden bg-[#e8f5ff]"
+      className="relative w-full max-w-full overflow-x-hidden bg-[#e8f5ff]"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_15%_20%,#9fe8ff_0%,transparent_55%),radial-gradient(ellipse_70%_50%_at_85%_10%,#7ef0e4_0%,transparent_50%),linear-gradient(180deg,#e8f5ff_0%,#d4efff_45%,#b8e8ef_100%)]" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_15%_20%,#9fe8ff_0%,transparent_55%),radial-gradient(ellipse_70%_50%_at_85%_10%,#7ef0e4_0%,transparent_50%),linear-gradient(180deg,#e8f5ff_0%,#d4efff_45%,#b8e8ef_100%)]" />
       </div>
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col justify-center px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 lg:min-h-[100svh] lg:px-8 lg:pb-28 lg:pt-28">
@@ -129,10 +132,16 @@ export function Hero() {
           >
             {/* Blue card — compact, top-aligned */}
             <div className="liquid-drop relative mx-auto w-full max-w-[24rem] overflow-hidden bg-sky-950 shadow-deep lg:ml-auto lg:max-w-[26rem]">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-950 via-[#0d5f7c] to-[#087f8c]" />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-950 via-[#0d5f7c] to-[#087f8c]"
+              />
 
               {/* Floating bubbles */}
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 overflow-hidden"
+              >
                 {bubbles.map((bubble, i) => (
                   <motion.span
                     key={i}

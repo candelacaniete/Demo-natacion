@@ -41,11 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${sora.variable} ${dmSans.variable} h-full overflow-x-hidden w-full max-w-full`}
-    >
-      <body className="min-h-full w-full max-w-full overflow-x-hidden font-sans antialiased text-sky-950">
+    <html lang="es" className={`${sora.variable} ${dmSans.variable} w-full max-w-full`}>
+      <body className="relative w-full max-w-full font-sans antialiased text-sky-950">
         {children}
       </body>
     </html>

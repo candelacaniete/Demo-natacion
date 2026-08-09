@@ -37,8 +37,8 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className="relative w-full max-w-full overflow-x-hidden bg-sky-950 py-20 md:py-24">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+    <section id="servicios" className="relative w-full max-w-full bg-sky-950 py-20 md:py-24">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-4rem] top-10 h-64 w-64 rounded-full bg-teal/20 blur-3xl" />
         <div className="absolute bottom-0 right-[-3rem] h-72 w-72 rounded-full bg-warm/15 blur-3xl" />
       </div>
