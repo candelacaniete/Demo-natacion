@@ -24,6 +24,7 @@ export function WaveDivider({
   animated = true,
 }: WaveDividerProps) {
   const fill = to ?? fills[variant];
+  const accent = variant === "deep" ? "#00CED1" : "#0f4c81";
 
   return (
     <div
@@ -35,29 +36,32 @@ export function WaveDivider({
     >
       <div
         className={cn(
-          "relative h-16 w-[130%] max-w-none md:h-24",
+          "relative h-14 w-[140%] max-w-none md:h-20",
           flip && "rotate-180",
           animated && "animate-wave-tide"
         )}
-        style={{ marginLeft: "-15%" }}
+        style={{ marginLeft: "-20%" }}
       >
-        <svg
-          className="absolute inset-0 h-full w-full"
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill={fill}
-            opacity="0.4"
-            d="M0,72 C160,30 300,110 470,78 C640,46 780,10 960,48 C1120,82 1280,110 1440,70 L1440,120 L0,120 Z"
-          />
-        </svg>
+        {/* Accent tide layer for visibility */}
         <svg
           className={cn(
             "absolute inset-0 h-full w-full",
             animated && "animate-wave-tide-alt"
           )}
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill={accent}
+            opacity={variant === "deep" ? 0.35 : 0.12}
+            d="M0,60 C180,20 320,100 500,68 C680,36 840,8 1040,48 C1200,78 1320,96 1440,58 L1440,120 L0,120 Z"
+          />
+        </svg>
+
+        {/* Main fill matching next section */}
+        <svg
+          className="absolute inset-0 h-full w-full"
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
