@@ -14,8 +14,8 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "mb-4 overflow-hidden border border-ocean/8 bg-gradient-to-br from-foam to-aqua-mist/80 shadow-soft last:mb-0",
-      "rounded-[2rem_0.9rem_2rem_0.9rem]",
+      "mb-4 overflow-hidden border border-ocean/10 bg-gradient-to-br from-foam to-aqua-mist/90 shadow-soft last:mb-0",
+      "shape-shell",
       className
     )}
     {...props}
@@ -31,13 +31,16 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between gap-4 px-5 py-5 text-left font-display text-base font-semibold text-sky-ink transition-all hover:text-ocean sm:px-6 sm:text-lg [&[data-state=open]>span]:rotate-45 [&[data-state=open]>span]:bg-teal [&[data-state=open]>span]:text-sky-ink",
+        "flex flex-1 items-center justify-between gap-4 px-5 py-5 text-left font-display text-base font-semibold text-sky-950 transition-all hover:text-ocean sm:px-6 sm:text-lg [&[data-state=open]>span]:rotate-45 [&[data-state=open]>span]:bg-teal [&[data-state=open]>span]:text-sky-950",
         className
       )}
       {...props}
     >
       {children}
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[1rem_0.45rem_1rem_0.45rem] bg-ocean/10 text-ocean transition-all duration-300">
+      <span
+        className="flex h-9 w-9 shrink-0 items-center justify-center bg-ocean/10 text-ocean transition-all duration-300"
+        style={{ borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%" }}
+      >
         <Plus className="h-5 w-5" />
       </span>
     </AccordionPrimitive.Trigger>

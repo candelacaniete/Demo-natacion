@@ -15,9 +15,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <WaveDivider variant="soft" className="-mt-1" />
+        <WaveDivider variant="soft" className="-mt-2" />
         <CudBanner />
-        <WaveDivider variant="deep" />
+        <WaveDivider variant="deep" to="#082f49" />
         <Services />
         <WaveDivider flip variant="soft" />
         <HowItWorks />

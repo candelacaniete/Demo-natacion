@@ -18,9 +18,10 @@ export function WhatsappFloat() {
         initial={{ opacity: 0, y: 12, scale: 0.92 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 1, duration: 0.45 }}
-        className="animate-bubble-bob relative max-w-[12.5rem] rounded-[1.5rem_1.5rem_0.45rem_1.5rem] bg-white px-3.5 py-2.5 text-left shadow-float ring-1 ring-ocean/10"
+        className="animate-bubble-bob relative max-w-[12.8rem] bg-white px-3.5 py-2.5 text-left shadow-float ring-1 ring-ocean/10"
+        style={{ borderRadius: "22px 22px 8px 22px" }}
       >
-        <p className="font-display text-xs font-semibold leading-snug text-sky-ink">
+        <p className="font-display text-xs font-semibold leading-snug text-sky-950">
           ¡Hablame por WhatsApp!
         </p>
         <span
@@ -39,11 +40,13 @@ export function WhatsappFloat() {
         transition={{ delay: 0.8, duration: 0.4 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.96 }}
-        className="relative flex h-14 w-14 items-center justify-center rounded-[1.55rem_0.7rem_1.55rem_0.7rem] bg-whatsapp text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.65)]"
+        className="relative flex h-14 w-14 items-center justify-center bg-whatsapp text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.65)]"
+        style={{ borderRadius: "42% 58% 50% 50% / 55% 40% 60% 45%" }}
       >
         <span
           aria-hidden="true"
-          className="absolute inset-0 animate-pulse-ring rounded-[1.55rem_0.7rem_1.55rem_0.7rem] bg-whatsapp"
+          className="absolute inset-0 animate-pulse-ring bg-whatsapp"
+          style={{ borderRadius: "42% 58% 50% 50% / 55% 40% 60% 45%" }}
         />
         <WhatsAppIcon className="relative h-7 w-7" />
       </motion.a>

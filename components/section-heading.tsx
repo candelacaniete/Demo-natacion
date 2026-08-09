@@ -58,7 +58,7 @@ export function SectionHeading({
       <h2
         className={cn(
           "font-display text-3xl font-bold tracking-tight md:text-4xl lg:text-[2.85rem] lg:leading-[1.15]",
-          tone === "dark" ? "text-white" : "text-sky-ink"
+          tone === "dark" ? "text-white" : "text-sky-950"
         )}
       >
         {parts ? (
@@ -74,10 +74,10 @@ export function SectionHeading({
               >
                 <path
                   d="M2 8 C40 2, 80 12, 120 6 C150 2, 175 8, 198 5"
-                  stroke={tone === "dark" ? "#00CED1" : "#00CED1"}
+                  stroke="#00CED1"
                   strokeWidth="4"
                   strokeLinecap="round"
-                  opacity="0.85"
+                  opacity="0.9"
                 />
               </svg>
             </span>

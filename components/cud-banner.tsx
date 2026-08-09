@@ -10,29 +10,32 @@ export function CudBanner() {
     <section id="cobertura-cud" className="relative bg-aqua-pale py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ y: -4, scale: 1.01 }}
-          className="relative overflow-hidden rounded-[2.8rem_1.2rem_2.4rem_2.2rem] border border-teal/25 bg-gradient-to-br from-[#e8f7ff] via-[#f0f8ff] to-[#dffff8] p-6 shadow-float sm:rounded-[3.4rem_1.4rem_2.8rem_2.6rem] sm:p-8 md:p-10"
+          whileHover={{ y: -5, scale: 1.015 }}
+          className="relative overflow-hidden shape-shell border border-teal/30 bg-[linear-gradient(135deg,#e7f7ff_0%,#f0f8ff_45%,#d8fff8_100%)] p-6 shadow-float sm:p-8 md:p-10"
         >
           <div
             aria-hidden="true"
-            className="absolute -right-20 top-0 h-56 w-56 rounded-full bg-teal/20 blur-3xl"
+            className="absolute -right-16 top-0 h-52 w-52 rounded-full bg-teal/25 blur-3xl"
           />
           <div
             aria-hidden="true"
-            className="absolute -left-14 bottom-0 h-44 w-44 rounded-full bg-ocean/10 blur-3xl"
+            className="absolute -left-12 bottom-0 h-40 w-40 rounded-full bg-ocean/10 blur-3xl"
           />
 
           <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]">
             <div className="flex gap-4 sm:gap-5">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[1.6rem_0.65rem_1.6rem_0.65rem] bg-teal/20 text-sky-ink shadow-inner">
+              <span
+                className="flex h-14 w-14 shrink-0 items-center justify-center bg-teal/20 text-sky-950 shadow-inner"
+                style={{ borderRadius: "42% 58% 50% 50% / 55% 40% 60% 45%" }}
+              >
                 <FileCheck2 className="h-7 w-7" />
               </span>
               <div>
-                <h2 className="font-display text-2xl font-bold tracking-tight text-sky-ink md:text-3xl">
+                <h2 className="font-display text-2xl font-bold tracking-tight text-sky-950 md:text-3xl">
                   ¿Tenés Certificado Único de Discapacidad (CUD)?
                 </h2>
                 <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg">

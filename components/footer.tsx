@@ -12,7 +12,7 @@ export function Footer() {
   const phoneDisplay = "+54 9 11 5801-9827";
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-sky-ink via-ocean-deep to-[#0a3d4f] text-cyan-50">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-sky-950 via-ocean-deep to-[#0a3d4f] text-cyan-50">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-40"
@@ -25,7 +25,10 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-[1.4rem_0.55rem_1.4rem_0.55rem] bg-white/10 text-white ring-1 ring-white/15">
+              <span
+                className="flex h-11 w-11 items-center justify-center bg-white/10 text-white ring-1 ring-white/15"
+                style={{ borderRadius: "45% 55% 50% 50% / 55% 40% 60% 45%" }}
+              >
                 <Waves className="h-5 w-5" />
               </span>
               <div>

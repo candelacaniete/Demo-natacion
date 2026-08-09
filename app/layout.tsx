@@ -42,7 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${sora.variable} ${dmSans.variable} h-full`}>
-      <body className="min-h-full font-sans antialiased">{children}</body>
+      <body className="min-h-full font-sans antialiased text-sky-950">
+        {children}
+      </body>
     </html>
   );
 }

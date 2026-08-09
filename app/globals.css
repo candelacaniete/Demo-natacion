@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0f8ff;
+  --background: #eef7ff;
   --foreground: #082f49;
   --ocean: #0f4c81;
-  --ocean-deep: #0c3a63;
+  --ocean-deep: #0a355c;
   --sky-ink: #082f49;
   --teal: #00ced1;
-  --teal-deep: #0aa8ab;
+  --teal-deep: #099ea1;
   --aqua-pale: #f0f8ff;
-  --aqua-mist: #e4f4ff;
+  --aqua-mist: #d9f0ff;
   --foam: #f7fcff;
-  --warm: #f08a4b;
+  --warm: #ef8a45;
   --warm-deep: #d96b28;
   --whatsapp: #25d366;
-  --sand: #fff8f1;
+  --sand: #fff6eb;
+  --coral-soft: #ffe8d6;
 }
 
 @theme inline {
@@ -32,6 +33,7 @@
   --color-warm-deep: var(--warm-deep);
   --color-whatsapp: var(--whatsapp);
   --color-sand: var(--sand);
+  --color-coral-soft: var(--coral-soft);
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-sora);
 }
@@ -43,15 +45,16 @@
 
   body {
     background:
-      radial-gradient(ellipse 80% 50% at 10% -10%, #d9f3ff 0%, transparent 55%),
-      radial-gradient(ellipse 60% 40% at 90% 0%, #c8fff8 0%, transparent 45%),
+      radial-gradient(ellipse 90% 55% at 0% -5%, #ccefff 0%, transparent 50%),
+      radial-gradient(ellipse 70% 45% at 100% 0%, #b8fff4 0%, transparent 48%),
+      radial-gradient(ellipse 50% 35% at 50% 100%, #ffe8d6 0%, transparent 40%),
       var(--aqua-pale);
     color: var(--sky-ink);
     font-family: var(--font-dm-sans), "Nunito", sans-serif;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--teal) 35%, white);
+    background: color-mix(in oklab, var(--teal) 40%, white);
     color: var(--sky-ink);
   }
 }
@@ -60,52 +63,53 @@
   font-family: var(--font-sora), "Outfit", sans-serif;
 }
 
-@utility radius-blob {
-  border-radius: 42% 58% 48% 52% / 52% 42% 58% 48%;
+/* Explicit organic shells — 4 unique corners, never A/B/A/B shorthand */
+@utility shape-shell {
+  border-radius: 60px 20px 48px 28px;
 }
 
-@utility radius-blob-sm {
-  border-radius: 38% 62% 44% 56% / 56% 38% 62% 44%;
+@utility shape-shell-alt {
+  border-radius: 20px 56px 24px 52px;
 }
 
-@utility radius-blob-alt {
-  border-radius: 58% 42% 52% 48% / 42% 58% 48% 52%;
+@utility shape-shell-soft {
+  border-radius: 40px 40px 16px 48px;
 }
 
-@utility radius-drop {
-  border-radius: 72% 28% 58% 42% / 48% 62% 38% 52%;
+@utility shape-pill-soft {
+  border-radius: 28px 14px 28px 14px;
 }
 
-@utility radius-pebble {
-  border-radius: 48% 52% 40% 60% / 58% 36% 64% 42%;
+@utility shape-drop {
+  border-radius: 68% 32% 58% 42% / 46% 54% 46% 54%;
 }
 
-@utility radius-shell {
-  border-radius: 2.8rem 1rem 2.4rem 2.2rem;
+@utility shape-pebble {
+  border-radius: 55% 45% 42% 58% / 48% 52% 48% 52%;
 }
 
-@utility radius-shell-alt {
-  border-radius: 1rem 2.8rem 1.2rem 2.6rem;
-}
-
-@utility radius-shell-soft {
-  border-radius: 2.4rem 2.4rem 1rem 2.8rem;
+@utility shape-note {
+  border-radius: 32px 18px 42px 22px;
 }
 
 @utility shadow-soft {
-  box-shadow: 0 24px 60px -20px rgb(8 47 73 / 0.14);
+  box-shadow: 0 22px 50px -18px rgb(8 47 73 / 0.16);
 }
 
 @utility shadow-float {
   box-shadow:
-    0 18px 40px -16px rgb(15 76 129 / 0.18),
-    0 4px 12px -6px rgb(0 206 209 / 0.2);
+    0 20px 44px -14px rgb(15 76 129 / 0.2),
+    0 6px 16px -8px rgb(0 206 209 / 0.22);
+}
+
+@utility shadow-deep {
+  box-shadow: 0 28px 70px -22px rgb(8 47 73 / 0.28);
 }
 
 @keyframes accordion-down {
   from {
     height: 0;
-    opacity: 0.4;
+    opacity: 0.35;
   }
   to {
     height: var(--radix-accordion-content-height);
@@ -120,31 +124,31 @@
   }
   to {
     height: 0;
-    opacity: 0.4;
+    opacity: 0.35;
   }
 }
 
 @keyframes float-soft {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
   }
 }
 
 @keyframes pulse-ring {
   0% {
     transform: scale(1);
-    opacity: 0.55;
+    opacity: 0.5;
   }
-  70% {
-    transform: scale(1.55);
+  75% {
+    transform: scale(1.65);
     opacity: 0;
   }
   100% {
-    transform: scale(1.55);
+    transform: scale(1.65);
     opacity: 0;
   }
 }
@@ -155,12 +159,22 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wave-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-18px);
   }
 }
 
 @utility animate-accordion-down {
-  animation: accordion-down 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: accordion-down 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @utility animate-accordion-up {
@@ -168,13 +182,17 @@
 }
 
 @utility animate-float-soft {
-  animation: float-soft 5.5s ease-in-out infinite;
+  animation: float-soft 5.8s ease-in-out infinite;
 }
 
 @utility animate-pulse-ring {
-  animation: pulse-ring 2.2s ease-out infinite;
+  animation: pulse-ring 2.1s ease-out infinite;
 }
 
 @utility animate-bubble-bob {
-  animation: bubble-bob 3.2s ease-in-out infinite;
+  animation: bubble-bob 3s ease-in-out infinite;
+}
+
+@utility animate-wave-drift {
+  animation: wave-drift 10s ease-in-out infinite;
 }

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ClipboardList, MessageSquareHeart, Waves } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
+import { cn } from "@/lib/utils";
 
 const steps = [
   {
@@ -11,7 +12,7 @@ const steps = [
     title: "Contacto Inicial",
     description:
       "Nos escribís por WhatsApp para contarnos tu consulta. Respondemos con calidez y sin vueltas.",
-    radius: "radius-shell",
+    shape: "shape-shell",
   },
   {
     number: "02",
@@ -19,7 +20,7 @@ const steps = [
     title: "Entrevista de Evaluación",
     description:
       "Conocemos las necesidades de la persona para asignar el grupo o Profe ideal.",
-    radius: "radius-shell-alt",
+    shape: "shape-shell-alt",
   },
   {
     number: "03",
@@ -27,7 +28,7 @@ const steps = [
     title: "¡A la Pileta!",
     description:
       "Comenzamos las actividades en la sede que mejor te quede, con acompañamiento cercano.",
-    radius: "radius-shell-soft",
+    shape: "shape-shell-soft",
   },
 ];
 
@@ -45,7 +46,7 @@ export function HowItWorks() {
         <div className="relative mt-14">
           <div
             aria-hidden="true"
-            className="absolute left-[10%] right-[10%] top-12 hidden h-[2px] bg-gradient-to-r from-transparent via-teal/40 to-transparent md:block"
+            className="absolute left-[10%] right-[10%] top-14 hidden h-[3px] rounded-full bg-gradient-to-r from-transparent via-teal/50 to-transparent md:block"
           />
 
           <ol className="grid gap-6 md:grid-cols-3">
@@ -57,17 +58,24 @@ export function HowItWorks() {
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.55, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.03 }}
-                className={`relative bg-foam p-6 shadow-float ring-1 ring-ocean/5 sm:p-7 ${step.radius}`}
+                className={cn(
+                  "relative bg-foam p-6 shadow-float ring-1 ring-ocean/5 sm:p-7",
+                  step.shape,
+                  index === 1 && "md:mt-8"
+                )}
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-[1.35rem_0.55rem_1.35rem_0.55rem] bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/20">
+                  <span
+                    className="flex h-12 w-12 items-center justify-center bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/20"
+                    style={{ borderRadius: "45% 55% 50% 50% / 55% 40% 60% 45%" }}
+                  >
                     <step.icon className="h-5 w-5" />
                   </span>
                   <span className="font-display text-3xl font-bold text-teal/45">
                     {step.number}
                   </span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-sky-ink">
+                <h3 className="font-display text-xl font-bold text-sky-950">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">

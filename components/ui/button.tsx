@@ -9,24 +9,26 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-ocean text-white shadow-float hover:bg-ocean-deep hover:-translate-y-0.5",
+          "shape-pill-soft bg-ocean text-white shadow-float hover:bg-ocean-deep hover:-translate-y-0.5",
         secondary:
-          "bg-foam/90 text-sky-ink shadow-soft ring-1 ring-ocean/10 hover:bg-white hover:-translate-y-0.5",
+          "shape-pill-soft bg-foam/95 text-sky-950 shadow-soft ring-1 ring-ocean/10 hover:bg-white hover:-translate-y-0.5",
         whatsapp:
-          "bg-whatsapp text-white shadow-[0_16px_36px_-12px_rgba(37,211,102,0.55)] hover:bg-[#1ebe57] hover:-translate-y-0.5",
+          "shape-pill-soft bg-whatsapp text-white shadow-[0_16px_36px_-12px_rgba(37,211,102,0.55)] hover:bg-[#1ebe57] hover:-translate-y-0.5",
         accent:
-          "bg-warm text-white shadow-[0_16px_36px_-12px_rgba(240,138,75,0.45)] hover:bg-warm-deep",
-        ghost: "text-sky-ink hover:bg-white/50",
+          "shape-pill-soft bg-warm text-white shadow-[0_16px_36px_-12px_rgba(239,138,69,0.45)] hover:bg-warm-deep",
+        ghost: "text-sky-950 hover:bg-white/50",
         outline:
-          "border-2 border-ocean/20 bg-transparent text-sky-ink hover:border-teal hover:bg-aqua-mist/60",
-        soft: "bg-teal/15 text-sky-ink hover:bg-teal/25",
+          "shape-pill-soft border-2 border-ocean/20 bg-transparent text-sky-950 hover:border-teal hover:bg-aqua-mist/70",
+        soft: "shape-pill-soft bg-teal/15 text-sky-950 hover:bg-teal/25",
+        light:
+          "shape-pill-soft bg-white text-sky-950 shadow-soft hover:bg-sand",
       },
       size: {
-        default: "h-11 rounded-[1.4rem_0.7rem_1.4rem_0.7rem] px-5 py-2",
-        sm: "h-9 rounded-[1.1rem_0.55rem_1.1rem_0.55rem] px-3.5 text-xs",
-        lg: "h-12 rounded-[1.55rem_0.75rem_1.55rem_0.75rem] px-6 text-base",
-        xl: "h-14 rounded-[1.8rem_0.85rem_1.8rem_0.85rem] px-7 text-base",
-        icon: "h-11 w-11 rounded-[1.25rem_0.65rem_1.25rem_0.65rem]",
+        default: "h-11 px-5 py-2",
+        sm: "h-9 px-3.5 text-xs",
+        lg: "h-12 px-6 text-base",
+        xl: "h-14 px-7 text-base",
+        icon: "h-11 w-11",
       },
     },
     defaultVariants: {

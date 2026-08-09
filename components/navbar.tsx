@@ -37,18 +37,22 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-4 sm:pt-4">
       <div
         className={cn(
-          "mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between rounded-[2rem_1rem_2rem_1rem] border px-4 transition-all duration-300 sm:px-5",
+          "mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between border px-4 transition-all duration-300 sm:px-5",
+          "shape-shell backdrop-blur-md",
           scrolled
-            ? "border-white/80 bg-white/70 shadow-float backdrop-blur-md"
-            : "border-white/50 bg-white/55 shadow-soft backdrop-blur-md"
+            ? "border-white/80 bg-white/70 shadow-float"
+            : "border-white/55 bg-white/60 shadow-soft"
         )}
       >
         <Link href="#inicio" className="group flex items-center gap-2.5">
-          <span className="flex h-10 w-10 items-center justify-center rounded-[1.35rem_0.55rem_1.35rem_0.55rem] bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/25 transition group-hover:scale-105">
+          <span
+            className="flex h-10 w-10 items-center justify-center bg-gradient-to-br from-ocean to-teal text-white shadow-md shadow-ocean/25 transition group-hover:scale-105"
+            style={{ borderRadius: "40% 60% 55% 45% / 55% 40% 60% 45%" }}
+          >
             <Waves className="h-5 w-5" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-[0.95rem] font-bold tracking-tight text-sky-ink sm:text-base">
+            <span className="font-display text-[0.95rem] font-bold tracking-tight text-sky-950 sm:text-base">
               Natación Inclusiva
             </span>
             <span className="mt-1 font-display text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-teal-deep">
@@ -62,7 +66,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-[1rem_0.45rem_1rem_0.45rem] px-3.5 py-2 font-display text-sm font-medium text-slate-600 transition hover:bg-aqua-mist hover:text-ocean"
+              className="shape-pill-soft px-3.5 py-2 font-display text-sm font-medium text-slate-600 transition hover:bg-aqua-mist hover:text-ocean"
             >
               {link.label}
             </Link>
@@ -101,7 +105,7 @@ export function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="rounded-[1.4rem_0.65rem_1.4rem_0.65rem] px-4 py-3 font-display text-base font-semibold text-sky-ink transition hover:bg-white"
+                      className="shape-shell px-4 py-3 font-display text-base font-semibold text-sky-950 transition hover:bg-white"
                     >
                       {link.label}
                     </Link>
