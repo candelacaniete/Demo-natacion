@@ -79,7 +79,7 @@ export function Navbar() {
             </a>
           </Button>
 
-          <Sheet>
+          <Sheet modal={false}>
             <SheetTrigger asChild>
               <Button
                 variant="secondary"

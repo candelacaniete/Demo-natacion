@@ -30,7 +30,7 @@ export function WaveDivider({
     <div
       aria-hidden="true"
       className={cn(
-        "pointer-events-none relative z-10 -mb-px w-full max-w-full overflow-hidden leading-none",
+        "pointer-events-none relative z-10 -mb-px w-full max-w-full overflow-x-clip leading-none",
         className
       )}
     >

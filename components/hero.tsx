@@ -13,30 +13,22 @@ const bubbles = [
   { size: 12, left: "28%", delay: 1.8, duration: 7, x: [0, 5, -5, 0], opacity: 0.32 },
 ];
 
+/** Hand-drawn wave underline — sits tight under the word "todos" */
 function OrganicUnderline() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute bottom-[-10px] left-0 right-0 z-0 h-3 w-full overflow-visible"
-      viewBox="0 0 220 20"
+      className="pointer-events-none absolute left-0 right-0 top-[calc(100%-0.08em)] z-0 h-[0.28em] w-full overflow-visible"
+      viewBox="0 0 120 12"
       fill="none"
       preserveAspectRatio="none"
     >
-      {/* Hand-drawn wave scribble — thicker for mobile legibility */}
       <path
-        d="M3 13 C22 5, 38 17, 58 9 C78 2, 94 16, 116 8 C136 1, 154 15, 176 7 C192 2, 206 14, 217 8"
+        d="M2 8 C14 2, 26 11, 40 6 C54 1, 66 10, 80 5 C94 0.5, 106 9, 118 4"
         stroke="#00CED1"
-        strokeWidth="4.5"
+        strokeWidth="3.25"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-      <path
-        d="M8 16 C28 9, 46 18, 66 11 C86 5, 104 17, 124 10 C144 4, 162 16, 182 9 C198 5, 210 14, 216 11"
-        stroke="#00CED1"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity="0.5"
       />
     </svg>
   );
@@ -44,25 +36,23 @@ function OrganicUnderline() {
 
 export function Hero() {
   return (
-    <section
-      id="inicio"
-      className="relative w-full max-w-full overflow-x-hidden bg-[#e8f5ff]"
-    >
+    <section id="inicio" className="relative w-full max-w-full bg-[#e8f5ff]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
+        className="pointer-events-none absolute inset-0 overflow-x-clip"
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_15%_20%,#9fe8ff_0%,transparent_55%),radial-gradient(ellipse_70%_50%_at_85%_10%,#7ef0e4_0%,transparent_50%),linear-gradient(180deg,#e8f5ff_0%,#d4efff_45%,#b8e8ef_100%)]" />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col justify-center px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 lg:min-h-[100svh] lg:px-8 lg:pb-28 lg:pt-28">
-        <div className="grid w-full max-w-full items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-          <div className="relative z-10 flex min-w-0 flex-col">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col justify-center px-4 pb-14 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:min-h-[100svh] lg:px-8 lg:pb-28 lg:pt-32">
+        <div className="grid w-full max-w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+          {/* Copy column — generous vertical rhythm on mobile */}
+          <div className="relative z-10 flex min-w-0 flex-col gap-0">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-4 inline-flex w-fit max-w-full items-center gap-1.5 rounded-[30px_15px_30px_15px] bg-white/75 px-2.5 py-1 font-display text-xs font-semibold uppercase tracking-[0.1em] text-sky-950 shadow-soft ring-1 ring-teal/25 md:mb-5 md:gap-2 md:px-4 md:py-2 md:tracking-[0.12em]"
+              className="mb-6 inline-flex w-fit max-w-full items-center gap-1.5 rounded-[30px_15px_30px_15px] bg-white/75 px-2.5 py-1 font-display text-xs font-semibold uppercase tracking-[0.1em] text-sky-950 shadow-soft ring-1 ring-teal/25 md:mb-5 md:gap-2 md:px-4 md:py-2 md:tracking-[0.12em]"
             >
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal md:h-2 md:w-2" />
               <span className="min-w-0 leading-snug">
@@ -74,15 +64,15 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.05 }}
-              className="font-display text-3xl font-bold leading-[1.12] tracking-tight text-sky-950 sm:text-4xl md:text-5xl lg:text-[3.75rem] lg:leading-[0.98]"
+              className="font-display text-3xl font-bold leading-[1.2] tracking-tight text-sky-950 sm:text-4xl md:text-5xl lg:text-[3.75rem] lg:leading-[1.05]"
             >
-              <span className="block text-[0.42em] font-semibold uppercase tracking-[0.18em] text-ocean">
+              <span className="mb-3 block text-[0.42em] font-semibold uppercase tracking-[0.18em] text-ocean">
                 Natación Inclusiva Pilar
               </span>
-              <span className="mt-3 block">
+              <span className="block">
                 Un espacio donde{" "}
-                <span className="relative inline-block px-0.5 pb-2">
-                  <span className="relative z-10">todos</span>
+                <span className="relative inline-block whitespace-nowrap">
+                  todos
                   <OrganicUnderline />
                 </span>{" "}
                 podemos nadar.
@@ -116,12 +106,12 @@ export function Hero() {
               </span>
             </motion.div>
 
-            {/* CTAs — gap-y-8 from H1 on mobile for breathing room */}
+            {/* Breathing room: H1 → CTAs (mt-10/12). Tight gap between buttons. */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.3 }}
-              className="mt-8 flex w-full max-w-full flex-col items-stretch gap-y-8 md:mt-8 md:flex-row md:items-center md:gap-3 md:gap-y-0"
+              className="mt-10 flex w-full max-w-full flex-col items-stretch gap-3 sm:mt-12 md:mt-8 md:flex-row md:items-center md:gap-3"
             >
               <Button
                 asChild
@@ -142,7 +132,7 @@ export function Hero() {
               {/* Mobile: text link | Desktop: secondary button */}
               <a
                 href="#servicios"
-                className="flex items-center justify-center gap-1.5 text-sm font-semibold text-sky-950 transition hover:text-ocean md:hidden"
+                className="mt-1 flex items-center justify-center gap-1.5 py-1 text-sm font-semibold text-sky-950 transition hover:text-ocean md:mt-0 md:hidden"
               >
                 Ver Servicios y Cobertura
                 <ArrowDown className="h-4 w-4" />
@@ -180,7 +170,7 @@ export function Hero() {
                 {bubbles.map((bubble, i) => (
                   <motion.span
                     key={i}
-                    className="absolute bottom-[-10%] rounded-full bg-white/10 backdrop-blur-sm will-change-transform"
+                    className="absolute bottom-[-10%] rounded-full bg-white/10 backdrop-blur-sm"
                     style={{
                       width: bubble.size,
                       height: bubble.size,
@@ -225,7 +215,7 @@ export function Hero() {
               </div>
             </div>
 
-            <aside className="liquid-drop mb-8 mt-5 w-full border border-white/90 bg-sand p-4 shadow-float sm:p-5">
+            <aside className="liquid-drop mb-2 mt-6 w-full border border-white/90 bg-sand p-4 shadow-float sm:mb-8 sm:mt-5 sm:p-5">
               <div className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-[30px_15px_30px_15px] bg-warm/15 text-warm-deep">
                   <HeartHandshake className="h-4 w-4" />

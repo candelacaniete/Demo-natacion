@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative w-full max-w-full overflow-x-hidden">
+      <main className="relative w-full max-w-full overflow-x-clip">
         <Hero />
         <WaveDivider variant="soft" animated className="-mt-1" />
         <CudBanner />
