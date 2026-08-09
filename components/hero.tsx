@@ -19,15 +19,15 @@ function OrganicUnderline() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute -bottom-1 left-0 right-0 z-0 h-2.5 w-full overflow-visible md:-bottom-1.5 md:h-3"
-      viewBox="0 0 120 14"
+      className="pointer-events-none absolute -bottom-1.5 left-[-2%] right-[-2%] z-0 h-3 w-[104%] overflow-visible md:-bottom-2 md:h-3.5"
+      viewBox="0 0 100 16"
       fill="none"
       preserveAspectRatio="none"
     >
       <motion.path
-        d="M1.5 9.5 C16 2.5, 28 12.5, 42 7 C56 1.5, 68 12, 82 6.5 C96 1, 108 11.5, 118.5 5.5"
+        d="M2 11 C12 3, 22 14, 34 7 C46 1, 56 14, 68 8 C80 2, 90 13, 98 6"
         stroke="#00CED1"
-        strokeWidth="3.5"
+        strokeWidth="4"
         strokeLinecap="round"
         strokeLinejoin="round"
         initial={{ pathLength: 0, opacity: 0 }}
@@ -128,7 +128,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.28 }}
-              className="mt-10 flex w-full max-w-full flex-col items-stretch gap-3 sm:mt-12 md:mt-9 md:flex-row md:items-center"
+              className="mt-12 flex w-full max-w-full flex-col items-stretch gap-3 sm:mt-14 md:mt-10 md:flex-row md:items-center"
             >
               <Button
                 asChild

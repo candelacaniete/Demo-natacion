@@ -7,161 +7,147 @@ type HeroTurtleProps = {
   className?: string;
 };
 
-/** Soft illustrated sea turtle — watercolor washes + ink line */
+/** Soft illustrated sea turtle — watercolor washes, light ink */
 export function HeroTurtle({ className }: HeroTurtleProps) {
   return (
     <motion.div
       aria-hidden="true"
       className={cn("pointer-events-none select-none", className)}
-      initial={{ opacity: 0, x: 36, y: 20 }}
+      initial={{ opacity: 0, x: 40, y: 24 }}
       animate={{
         opacity: 1,
-        x: [0, -8, 4, 0],
-        y: [0, -10, -4, 0],
-        rotate: [-2, 1.5, -1, -2],
+        x: [0, -10, 5, 0],
+        y: [0, -12, -5, 0],
+        rotate: [-2.5, 1.2, -0.8, -2.5],
       }}
       transition={{
-        opacity: { duration: 0.9, delay: 0.15 },
-        x: { duration: 11, repeat: Infinity, ease: "easeInOut" },
-        y: { duration: 9, repeat: Infinity, ease: "easeInOut" },
-        rotate: { duration: 13, repeat: Infinity, ease: "easeInOut" },
+        opacity: { duration: 1, delay: 0.12 },
+        x: { duration: 12, repeat: Infinity, ease: "easeInOut" },
+        y: { duration: 10, repeat: Infinity, ease: "easeInOut" },
+        rotate: { duration: 14, repeat: Infinity, ease: "easeInOut" },
       }}
     >
       <svg
         viewBox="0 0 420 320"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full overflow-visible"
+        className="h-full w-full overflow-visible drop-shadow-[0_18px_30px_rgba(8,47,73,0.18)]"
       >
         <defs>
-          <linearGradient id="shellWash" x1="80" y1="40" x2="320" y2="260" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#1a7a6d" />
-            <stop offset="0.45" stopColor="#2d9b8a" />
-            <stop offset="1" stopColor="#0f5c6e" />
+          <linearGradient id="shellWash" x1="90" y1="50" x2="310" y2="250" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#2a9d8f" />
+            <stop offset="0.5" stopColor="#1f7a72" />
+            <stop offset="1" stopColor="#145a62" />
           </linearGradient>
-          <linearGradient id="shellLight" x1="140" y1="70" x2="280" y2="220" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#7ef0e4" stopOpacity="0.55" />
-            <stop offset="1" stopColor="#2d9b8a" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient id="flipperWash" x1="0" y1="0" x2="1" y2="1">
-            <stop stopColor="#3d8f7e" />
-            <stop offset="1" stopColor="#1f6b62" />
-          </linearGradient>
-          <radialGradient id="bellyGlow" cx="50%" cy="45%" r="55%">
-            <stop offset="0%" stopColor="#fff6eb" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#f0d9b0" stopOpacity="0.35" />
+          <radialGradient id="shellShine" cx="38%" cy="32%" r="55%">
+            <stop offset="0%" stopColor="#9ff5ea" stopOpacity="0.55" />
+            <stop offset="55%" stopColor="#2a9d8f" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#145a62" stopOpacity="0" />
           </radialGradient>
-          <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="2.2" />
+          <linearGradient id="flipperWash" x1="0" y1="0" x2="1" y2="1">
+            <stop stopColor="#3da899" />
+            <stop offset="1" stopColor="#1b6b66" />
+          </linearGradient>
+          <radialGradient id="bellyGlow" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#fff8ef" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#f2d4a8" stopOpacity="0.25" />
+          </radialGradient>
+          <filter id="washBlur" x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur stdDeviation="3.5" />
           </filter>
         </defs>
 
-        {/* Soft watercolor bloom behind turtle */}
-        <ellipse
-          cx="220"
-          cy="170"
-          rx="150"
-          ry="110"
-          fill="#7ef0e4"
-          opacity="0.18"
-          filter="url(#softBlur)"
-        />
+        {/* Ambient watercolor bloom */}
+        <ellipse cx="215" cy="175" rx="155" ry="115" fill="#7ef0e4" opacity="0.2" filter="url(#washBlur)" />
+        <ellipse cx="120" cy="140" rx="50" ry="36" fill="#b8fff4" opacity="0.22" filter="url(#washBlur)" />
 
-        {/* Rear flippers */}
+        {/* Flippers — soft organic shapes */}
         <path
-          d="M268 210 C300 232, 328 248, 348 262 C332 268, 304 258, 278 236 C270 226, 266 216, 268 210Z"
+          d="M115 150 C68 115, 32 104, 10 110 C22 132, 50 160, 90 182 C108 192, 126 178, 128 162 C129 154, 124 150, 115 150Z"
+          fill="url(#flipperWash)"
+          opacity="0.95"
+        />
+        <path
+          d="M165 212 C138 242, 102 276, 86 300 C114 292, 152 262, 178 230 C186 220, 178 206, 165 212Z"
           fill="url(#flipperWash)"
           opacity="0.9"
         />
         <path
-          d="M248 228 C262 252, 274 278, 278 298 C258 292, 238 268, 228 242 C226 232, 238 224, 248 228Z"
+          d="M270 208 C304 232, 336 250, 356 266 C338 272, 308 260, 280 236 C270 226, 266 214, 270 208Z"
           fill="url(#flipperWash)"
-          opacity="0.85"
+          opacity="0.88"
+        />
+        <path
+          d="M250 230 C266 256, 278 284, 282 304 C260 296, 238 270, 228 244 C226 234, 240 226, 250 230Z"
+          fill="url(#flipperWash)"
+          opacity="0.82"
         />
 
-        {/* Front flippers */}
-        <path
-          d="M118 148 C70 118, 36 108, 14 112 C28 128, 52 152, 88 176 C104 186, 122 176, 128 162 C130 154, 126 148, 118 148Z"
-          fill="url(#flipperWash)"
-        />
-        <path
-          d="M168 210 C142 236, 108 268, 92 292 C118 286, 152 258, 178 228 C186 218, 180 206, 168 210Z"
-          fill="url(#flipperWash)"
-          opacity="0.92"
-        />
+        {/* Shell */}
+        <ellipse cx="212" cy="170" rx="112" ry="90" fill="url(#shellWash)" />
+        <ellipse cx="212" cy="170" rx="112" ry="90" fill="url(#shellShine)" />
 
-        {/* Shell base */}
-        <ellipse cx="210" cy="168" rx="108" ry="88" fill="url(#shellWash)" />
-        <ellipse cx="210" cy="168" rx="108" ry="88" fill="url(#shellLight)" />
-
-        {/* Shell scutes — organic mosaic */}
+        {/* Soft scute patches — no harsh wire grid */}
         <path
-          d="M210 92 C246 96, 278 118, 292 150 C268 142, 236 132, 210 132 C184 132, 152 142, 128 150 C142 118, 174 96, 210 92Z"
-          fill="#0d5c58"
-          opacity="0.35"
+          d="M212 95 C250 100, 284 122, 298 154 C270 144, 238 134, 212 134 C186 134, 154 144, 126 154 C140 122, 174 100, 212 95Z"
+          fill="#0f5a58"
+          opacity="0.22"
         />
         <path
-          d="M210 132 C236 132, 268 142, 292 150 C300 172, 296 198, 278 220 C252 204, 228 196, 210 196 C192 196, 168 204, 142 220 C124 198, 120 172, 128 150 C152 142, 184 132, 210 132Z"
-          fill="#145f5a"
-          opacity="0.28"
+          d="M150 175 C172 158, 198 150, 212 150 C226 150, 252 158, 274 175 C280 198, 268 222, 246 236 C228 224, 212 220, 196 224 C174 232, 152 220, 144 198 C140 188, 144 180, 150 175Z"
+          fill="#9ff5ea"
+          opacity="0.16"
         />
         <path
-          d="M142 220 C168 204, 192 196, 210 196 C228 196, 252 204, 278 220 C262 244, 236 258, 210 258 C184 258, 158 244, 142 220Z"
-          fill="#0a4a4f"
-          opacity="0.32"
+          d="M145 218 C172 202, 196 196, 212 196 C228 196, 252 202, 279 218 C262 244, 236 258, 212 258 C188 258, 162 244, 145 218Z"
+          fill="#0a454c"
+          opacity="0.2"
         />
-        {/* Scute seams */}
-        <g stroke="#083f44" strokeWidth="2.2" strokeLinecap="round" opacity="0.45">
-          <path d="M210 98 L210 250" />
-          <path d="M148 140 C176 156, 244 156, 272 140" />
-          <path d="M138 188 C170 206, 250 206, 282 188" />
-          <path d="M160 120 C180 148, 180 210, 168 240" />
-          <path d="M260 120 C240 148, 240 210, 252 240" />
-        </g>
 
         {/* Head */}
         <path
-          d="M118 128 C88 112, 64 108, 48 118 C36 128, 38 148, 54 160 C72 174, 98 170, 122 158 C132 152, 132 138, 118 128Z"
-          fill="#2f8f7c"
+          d="M120 130 C88 112, 62 108, 46 118 C34 128, 36 150, 54 162 C74 176, 102 170, 124 158 C134 152, 134 140, 120 130Z"
+          fill="#34a897"
         />
-        <ellipse cx="62" cy="128" rx="5.5" ry="6" fill="#082f49" />
-        <circle cx="63.5" cy="126.5" r="1.6" fill="#e8f5ff" opacity="0.85" />
-        {/* gentle smile */}
+        <ellipse cx="60" cy="130" rx="5.8" ry="6.4" fill="#082f49" />
+        <circle cx="61.8" cy="128.2" r="1.7" fill="#e8f5ff" opacity="0.9" />
         <path
-          d="M44 142 C50 148, 58 150, 66 146"
+          d="M42 144 C49 151, 58 152, 67 148"
           stroke="#0a4a4f"
           strokeWidth="2"
           strokeLinecap="round"
-          opacity="0.55"
+          opacity="0.45"
         />
 
-        {/* Belly peek */}
-        <ellipse cx="206" cy="214" rx="62" ry="28" fill="url(#bellyGlow)" opacity="0.55" />
+        {/* Belly hint */}
+        <ellipse cx="208" cy="216" rx="64" ry="30" fill="url(#bellyGlow)" opacity="0.5" />
 
-        {/* Ink outline — hand-drawn feel */}
+        {/* Sparse ink accents — hand-drawn, not a full wireframe */}
         <g
-          stroke="#083842"
-          strokeWidth="3"
+          stroke="#0a3d48"
+          strokeWidth="2.6"
           strokeLinecap="round"
           strokeLinejoin="round"
           fill="none"
-          opacity="0.72"
+          opacity="0.55"
         >
-          <path d="M118 148 C70 118, 36 108, 14 112 C28 128, 52 152, 88 176 C104 186, 122 176, 128 162" />
-          <path d="M168 210 C142 236, 108 268, 92 292" />
-          <path d="M268 210 C300 232, 328 248, 348 262" />
-          <path d="M248 228 C262 252, 274 278, 278 298" />
-          <ellipse cx="210" cy="168" rx="108" ry="88" />
-          <path d="M118 128 C88 112, 64 108, 48 118 C36 128, 38 148, 54 160 C72 174, 98 170, 122 158" />
+          <path d="M115 150 C68 115, 32 104, 10 110 C22 132, 50 160, 90 182" />
+          <path d="M165 212 C138 242, 102 276, 86 300" />
+          <path d="M270 208 C304 232, 336 250, 356 266" />
+          <ellipse cx="212" cy="170" rx="112" ry="90" strokeWidth="3" />
+          <path d="M120 130 C88 112, 62 108, 46 118 C34 128, 36 150, 54 162 C74 176, 102 170, 124 158" />
+          {/* one soft shell curve only */}
+          <path d="M145 150 C175 138, 250 138, 279 150" opacity="0.7" />
+          <path d="M140 200 C175 218, 250 218, 284 200" opacity="0.55" />
         </g>
 
-        {/* Trail bubbles from flipper */}
+        {/* Trail bubbles */}
         <g fill="#ffffff">
-          <circle cx="24" cy="96" r="4" opacity="0.35" />
-          <circle cx="40" cy="78" r="2.5" opacity="0.28" />
-          <circle cx="58" cy="88" r="3.2" opacity="0.22" />
-          <circle cx="330" cy="240" r="3" opacity="0.25" />
-          <circle cx="348" cy="228" r="2" opacity="0.2" />
+          <circle cx="22" cy="94" r="4.5" opacity="0.4" />
+          <circle cx="38" cy="74" r="2.8" opacity="0.3" />
+          <circle cx="54" cy="86" r="3.4" opacity="0.24" />
+          <circle cx="340" cy="244" r="3.2" opacity="0.28" />
+          <circle cx="358" cy="228" r="2.2" opacity="0.22" />
         </g>
       </svg>
     </motion.div>
