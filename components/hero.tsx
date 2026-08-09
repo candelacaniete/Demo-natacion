@@ -18,15 +18,15 @@ function OrganicUnderline() {
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute left-0 right-0 top-[calc(100%-0.08em)] z-0 h-[0.28em] w-full overflow-visible"
-      viewBox="0 0 120 12"
+      className="pointer-events-none absolute -bottom-1 left-0 right-0 z-0 h-2.5 w-full overflow-visible md:-bottom-1.5 md:h-3"
+      viewBox="0 0 120 14"
       fill="none"
       preserveAspectRatio="none"
     >
       <path
-        d="M2 8 C14 2, 26 11, 40 6 C54 1, 66 10, 80 5 C94 0.5, 106 9, 118 4"
+        d="M1.5 9.5 C16 2.5, 28 12.5, 42 7 C56 1.5, 68 12, 82 6.5 C96 1, 108 11.5, 118.5 5.5"
         stroke="#00CED1"
-        strokeWidth="3.25"
+        strokeWidth="3.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -44,15 +44,15 @@ export function Hero() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_15%_20%,#9fe8ff_0%,transparent_55%),radial-gradient(ellipse_70%_50%_at_85%_10%,#7ef0e4_0%,transparent_50%),linear-gradient(180deg,#e8f5ff_0%,#d4efff_45%,#b8e8ef_100%)]" />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col justify-center px-4 pb-14 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:min-h-[100svh] lg:px-8 lg:pb-28 lg:pt-32">
-        <div className="grid w-full max-w-full items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col justify-center px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:min-h-[100svh] lg:px-8 lg:pb-28 lg:pt-32">
+        <div className="grid w-full max-w-full items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           {/* Copy column — generous vertical rhythm on mobile */}
-          <div className="relative z-10 flex min-w-0 flex-col gap-0">
+          <div className="relative z-10 flex min-w-0 flex-col">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-6 inline-flex w-fit max-w-full items-center gap-1.5 rounded-[30px_15px_30px_15px] bg-white/75 px-2.5 py-1 font-display text-xs font-semibold uppercase tracking-[0.1em] text-sky-950 shadow-soft ring-1 ring-teal/25 md:mb-5 md:gap-2 md:px-4 md:py-2 md:tracking-[0.12em]"
+              className="mb-7 inline-flex w-fit max-w-full items-center gap-1.5 rounded-[30px_15px_30px_15px] bg-white/75 px-2.5 py-1 font-display text-xs font-semibold uppercase tracking-[0.1em] text-sky-950 shadow-soft ring-1 ring-teal/25 md:mb-5 md:gap-2 md:px-4 md:py-2 md:tracking-[0.12em]"
             >
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal md:h-2 md:w-2" />
               <span className="min-w-0 leading-snug">
@@ -64,14 +64,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.05 }}
-              className="font-display text-3xl font-bold leading-[1.2] tracking-tight text-sky-950 sm:text-4xl md:text-5xl lg:text-[3.75rem] lg:leading-[1.05]"
+              className="font-display text-3xl font-bold leading-[1.25] tracking-tight text-sky-950 sm:text-4xl md:text-5xl lg:text-[3.75rem] lg:leading-[1.08]"
             >
-              <span className="mb-3 block text-[0.42em] font-semibold uppercase tracking-[0.18em] text-ocean">
+              <span className="mb-4 block text-[0.42em] font-semibold uppercase tracking-[0.18em] text-ocean">
                 Natación Inclusiva Pilar
               </span>
-              <span className="block">
+              <span className="block pb-1">
                 Un espacio donde{" "}
-                <span className="relative inline-block whitespace-nowrap">
+                <span className="relative inline-block whitespace-nowrap pb-1">
                   todos
                   <OrganicUnderline />
                 </span>{" "}
@@ -111,7 +111,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.3 }}
-              className="mt-10 flex w-full max-w-full flex-col items-stretch gap-3 sm:mt-12 md:mt-8 md:flex-row md:items-center md:gap-3"
+              className="mt-12 flex w-full max-w-full flex-col items-stretch gap-3.5 sm:mt-14 md:mt-8 md:flex-row md:items-center md:gap-3"
             >
               <Button
                 asChild
